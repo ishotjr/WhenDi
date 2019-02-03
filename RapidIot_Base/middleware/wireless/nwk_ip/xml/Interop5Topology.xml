@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<ZigBee>
+	<Settings>
+		<DefaultCmds>
+			<MacroScript>
+				<MacroName>Start A1</MacroName>
+				<MacroCmd>THR_SetDeviceConfig.Request 0x00 0x01 0x11 0xFACE 0x00020000 0x1122334455667788 0x0A 0x46736C20546872656164 0x40 0xFD000DB8000000000000000000000000 0x00112233445566778899AABBCCDDEEFF </MacroCmd>
+				<MacroCmd>Delay 1000</MacroCmd>
+				<MacroCmd>THR_SetAttr.Request 0x00 0x00 0x00 0x08 0x146E0A0000000001 </MacroCmd>
+				<MacroCmd>THR_SetAttr.Request 0x00 0x0A 0x00 0x01 0x00 </MacroCmd>
+				<MacroCmd>MAC_MacFilteringEnable.Request 0x00 0x01 </MacroCmd>
+				<MacroCmd>MAC_MacFilteringAddEntry.Request 0x00 0x146E0A0000000002 0xFFFF 0xFF </MacroCmd>
+				<MacroCmd>MAC_MacFilteringAddEntry.Request 0x00 0x146E0A0000000003 0xFFFF 0xFF </MacroCmd>
+				<MacroCmd>MAC_MacFilteringAddEntry.Request 0x00 0x146E0A0000000006 0xFFFF 0xFF </MacroCmd>
+				<MacroCmd>THR_Join.Request 0x00 0x00 </MacroCmd>
+			</MacroScript>
+			<MacroScript>
+				<MacroName>Start C3</MacroName>
+				<MacroCmd>THR_SetAttr.Request 0x00 0x00 0x00 0x08 0x146E0A0000000003 </MacroCmd>
+				<MacroCmd>THR_SetAttr.Request 0x00 0x0A 0x00 0x01 0x00 </MacroCmd>
+				<MacroCmd>MAC_MacFilteringEnable.Request 0x00 0x01 </MacroCmd>
+				<MacroCmd>MAC_MacFilteringAddEntry.Request 0x00 0x146E0A0000000001 0xFFFF 0xFF </MacroCmd>
+				<MacroCmd>MAC_MacFilteringAddEntry.Request 0x00 0x146E0A0000000005 0xFFFF 0xFF </MacroCmd>
+				<MacroCmd>THR_Join.Request 0x00 0x00 </MacroCmd>
+			</MacroScript>
+			<MacroScript>
+				<MacroName>Start B2</MacroName>
+				<MacroCmd>THR_SetAttr.Request 0x00 0x00 0x00 0x08 0x146E0A0000000002 </MacroCmd>
+				<MacroCmd>THR_SetAttr.Request 0x00 0x0A 0x00 0x01 0x00 </MacroCmd>
+				<MacroCmd>MAC_MacFilteringEnable.Request 0x00 0x01 </MacroCmd>
+				<MacroCmd>MAC_MacFilteringAddEntry.Request 0x00 0x146E0A0000000001 0xFFFF 0xFF </MacroCmd>
+				<MacroCmd>MAC_MacFilteringAddEntry.Request 0x00 0x146E0A0000000004 0xFFFF 0xFF </MacroCmd>
+				<MacroCmd>THR_Join.Request 0x00 0x00 </MacroCmd>
+			</MacroScript>
+			<MacroScript>
+				<MacroName>Start A4</MacroName>
+				<MacroCmd>THR_SetAttr.Request 0x00 0x00 0x00 0x08 0x146E0A0000000004 </MacroCmd>
+				<MacroCmd>THR_SetAttr.Request 0x00 0x0A 0x00 0x01 0x00 </MacroCmd>
+				<MacroCmd>MAC_MacFilteringEnable.Request 0x00 0x01 </MacroCmd>
+				<MacroCmd>MAC_MacFilteringAddEntry.Request 0x00 0x146E0A0000000002 0xFFFF 0xFF </MacroCmd>
+				<MacroCmd>THR_SetAttr.Request 0x00 0x0F 0x00 0x01 0x04 </MacroCmd>
+				<MacroCmd>THR_Join.Request 0x00 0x00 </MacroCmd>
+			</MacroScript>
+			<MacroScript>
+				<MacroName>Start B5</MacroName>
+				<MacroCmd>THR_SetAttr.Request 0x00 0x00 0x00 0x08 0x146E0A0000000005 </MacroCmd>
+				<MacroCmd>THR_SetAttr.Request 0x00 0x0F 0x00 0x01 0x04 </MacroCmd>
+				<MacroCmd>THR_SetAttr.Request 0x00 0x0A 0x00 0x01 0x00 </MacroCmd>
+				<MacroCmd>MAC_MacFilteringEnable.Request 0x00 0x01 </MacroCmd>
+				<MacroCmd>MAC_MacFilteringAddEntry.Request 0x00 0x146E0A0000000003 0xFFFF 0xFF </MacroCmd>
+				<MacroCmd>THR_Join.Request 0x00 0x00 </MacroCmd>
+			</MacroScript>
+			<MacroScript>
+				<MacroName>Start C6</MacroName>
+				<MacroCmd>THR_SetAttr.Request 0x00 0x0F 0x00 0x01 0x04 </MacroCmd>
+				<MacroCmd>THR_SetAttr.Request 0x00 0x00 0x00 0x08 0x146E0A0000000006 </MacroCmd>
+				<MacroCmd>THR_SetAttr.Request 0x00 0x0A 0x00 0x01 0x00 </MacroCmd>
+				<MacroCmd>MAC_MacFilteringEnable.Request 0x00 0x01 </MacroCmd>
+				<MacroCmd>MAC_MacFilteringAddEntry.Request 0x00 0x146E0A0000000001 0xFFFF 0xFF </MacroCmd>
+				<MacroCmd>THR_Join.Request 0x00 0x00 </MacroCmd>
+			</MacroScript>
+			<MacroScript>
+				<MacroName>Pings</MacroName>
+				<MacroCmd>NWKU_Ping.Request 0xFE80000000000000000000FFFE000400 0x00000000000000000000000000000000 0x0020 0x07D0 0x00 </MacroCmd>
+				<MacroCmd>NWKU_Ping.Request 0xFE80000000000000000000FFFE000401 0x00000000000000000000000000000000 0x0020 0x0BB8 </MacroCmd>
+				<MacroCmd>NWKU_Ping.Request 0xFE80000000000000000000FFFE000000 0x00000000000000000000000000000000 0x0020 0x0BB8 0x01 </MacroCmd>
+				<MacroCmd>NWKU_Ping.Request 0xFE80000000000000000000FFFE000800 0x00000000000000000000000000000000 0x0020 0x0BB8 </MacroCmd>
+				<MacroCmd>NWKU_Ping.Request 0xFE80000000000000000000FFFE000001 0x00000000000000000000000000000000 0x0020 0x0BB8 </MacroCmd>
+				<MacroCmd>NWKU_Ping.Request 0x20010000000000000000000000000000 0x00000000000000000000000000000000 0x0020 0x0BB8 0x01 </MacroCmd>
+				<MacroCmd>NWKU_Ping.Request 0x20010000000000000000000000000004 0x00000000000000000000000000000000 0x0020 0x0BB8 0x00 </MacroCmd>
+			</MacroScript>
+			<MacroScript>
+				<MacroName>Add DHCP+ExtRoute+Propagate</MacroName>
+				<MacroCmd>THR_BrPrefixAddEntry.Request 0x00 0x40 0x20010000000000000000000000000000 0x00 0x08 0xFFFFFFFF 0x01 0x00 0xFFFFFFFF 0x01 </MacroCmd>
+				<MacroCmd>THR_BrPrefixSync.Request 0x00 </MacroCmd>
+			</MacroScript>
+		</DefaultCmds>
+	</Settings>
+</ZigBee>

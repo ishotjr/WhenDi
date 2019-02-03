@@ -1,0 +1,59 @@
+
+#ifndef ATMO_PROPERTIES_H
+#define ATMO_PROPERTIES_H
+
+#ifdef __cplusplus
+	extern "C"{
+#endif
+
+#define ATMO_PROPERTY(ELEMENT, NAME) ATMO_ ## ELEMENT ## _PROPERTY_  ## NAME
+
+#define ATMO_EmbeddedNxpRpkUserButtons_PROPERTY_errorData NULL
+#define ATMO_EmbeddedNxpRpkUserButtons_PROPERTY_codeUserChanged NULL
+#define ATMO_EmbeddedNxpRpkUserButtons_PROPERTY_enableResetCombo true
+#define ATMO_EmbeddedNxpRpkUserButtons_PROPERTY_enableDisplayToggleCombo true
+
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_errorData NULL
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_codeUserChanged NULL
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_textColor GUI_BLUE
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_pageTitle "WhenDi"
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_titleHidden false
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_pageHidden false
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_topRightButtonLabel "Ate"
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_topRightButtonEnabled true
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_bottomRightButtonLabel "Changed"
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_bottomRightButtonEnabled true
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_topLeftButtonLabel "Slept"
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_topLeftButtonEnabled true
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_bottomLeftButtonLabel "Woke"
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_bottomLeftButtonEnabled true
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_x 0
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_y 0
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_spanX 1
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_spanY 1
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_icon icon_info
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_iconLabel ""
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_numLines 4
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_line1Text ""
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_line2Text ""
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_line3Text ""
+#define ATMO_EmbeddedIconLinesDisplay_PROPERTY_line4Text ""
+
+#define ATMO_DS1307RealTimeClock_PROPERTY_errorData NULL
+#define ATMO_DS1307RealTimeClock_PROPERTY_codeUserChanged NULL
+#define ATMO_DS1307RealTimeClock_PROPERTY_i2cInstance ATMO_DRIVERINSTANCE_I2C_I2C1
+#define ATMO_DS1307RealTimeClock_PROPERTY_i2cAddress 0x68
+#define ATMO_DS1307RealTimeClock_PROPERTY_startClockOnSetup true
+#define ATMO_DS1307RealTimeClock_PROPERTY_sqwFrequency DS1307_SQW_OUT_PIN_FREQUENCY_1Hz
+
+#define ATMO_Interval_PROPERTY_errorData NULL
+#define ATMO_Interval_PROPERTY_codeUserChanged NULL
+#define ATMO_Interval_PROPERTY_instance ATMO_DRIVERINSTANCE_INTERVAL_INTERVAL1
+#define ATMO_Interval_PROPERTY_time 1000
+
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif

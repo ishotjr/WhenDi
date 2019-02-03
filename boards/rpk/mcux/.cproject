@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="com.crt.advproject.config.exe.debug.880554757">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.crt.advproject.config.exe.debug.880554757" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactExtension="axf" artifactName="${ProjName}" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="Debug build" errorParsers="org.eclipse.cdt.core.CWDLocator;org.eclipse.cdt.core.GmakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="com.crt.advproject.config.exe.debug.880554757" name="Debug" parent="com.crt.advproject.config.exe.debug" postannouncebuildStep="Performing post-build steps" postbuildStep="arm-none-eabi-size &quot;${BuildArtifactFileName}&quot; ; arm-none-eabi-objcopy -v -O binary &quot;${BuildArtifactFileName}&quot; &quot;${BuildArtifactFileBaseName}.bin&quot; ; checksum -p ${TargetChip} -d &quot;${BuildArtifactFileBaseName}.bin&quot;" prebuildStep="arm-none-eabi-gcc -E -x c -P -Iinclude &quot;${ProjDirPath}/../../../MK64FN1M0xxx12_connectivity.lld&quot; -o &quot;${ProjDirPath}/MK64FN1M0xxx12_connectivity.ld&quot; -DgUseBootloaderLink_d=1 -DgUseInternalStorageLink_d=0 -DgUseNVMLink_d=0 -D__ram_vector_table__=1 -DgNVMSectorCountLink_d=32 -DgEraseNVMLink_d=0">
+					<folderInfo id="com.crt.advproject.config.exe.debug.880554757." name="/" resourcePath="">
+						<toolChain id="com.crt.advproject.toolchain.exe.debug.2137370468" name="NXP MCU Tools" superClass="com.crt.advproject.toolchain.exe.debug">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF;org.eclipse.cdt.core.GNU_ELF" id="com.crt.advproject.platform.exe.debug.1358438351" name="ARM-based MCU (Debug)" superClass="com.crt.advproject.platform.exe.debug"/>
+							<builder buildPath="${workspace_loc:/frdmk64f_kw41z_kinetis_host_freertos}/Debug" id="com.crt.advproject.builder.exe.debug.512502807" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" stopOnErr="true" superClass="com.crt.advproject.builder.exe.debug"/>
+							<tool id="com.crt.advproject.cpp.exe.debug.1184155408" name="MCU C++ Compiler" superClass="com.crt.advproject.cpp.exe.debug">
+								<option id="com.crt.advproject.cpp.arch.1449662682" name="Architecture" superClass="com.crt.advproject.cpp.arch" value="com.crt.advproject.cpp.target.cm0plus" valueType="enumerated"/>
+								<option id="com.crt.advproject.cpp.misc.dialect.579518030" name="Language standard" superClass="com.crt.advproject.cpp.misc.dialect"/>
+								<option id="gnu.cpp.compiler.option.dialect.flags.216654148" name="Other dialect flags" superClass="gnu.cpp.compiler.option.dialect.flags"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.nostdinc.1131274042" name="Do not search system directories (-nostdinc)" superClass="gnu.cpp.compiler.option.preprocessor.nostdinc"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.preprocess.1588966263" name="Preprocess only (-E)" superClass="gnu.cpp.compiler.option.preprocessor.preprocess"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.1520206373" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.undef.1479015472" name="Undefined symbols (-U)" superClass="gnu.cpp.compiler.option.preprocessor.undef"/>
+								<option id="gnu.cpp.compiler.option.include.paths.1654903485" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths"/>
+								<option id="gnu.cpp.compiler.option.include.files.1831516162" name="Include files (-include)" superClass="gnu.cpp.compiler.option.include.files"/>
+								<option id="com.crt.advproject.gcc.exe.debug.option.optimization.level.33223091" name="Optimization Level" superClass="com.crt.advproject.gcc.exe.debug.option.optimization.level" useByScannerDiscovery="false" value="gnu.c.optimization.level.size" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.optimization.flags.597486498" name="Other optimization flags" superClass="gnu.cpp.compiler.option.optimization.flags" value="-fno-common" valueType="string"/>
+								<option id="com.crt.advproject.cpp.exe.debug.option.debugging.level.651163871" name="Debug Level" superClass="com.crt.advproject.cpp.exe.debug.option.debugging.level"/>
+								<option id="gnu.cpp.compiler.option.debugging.other.122738650" name="Other debugging flags" superClass="gnu.cpp.compiler.option.debugging.other"/>
+								<option id="gnu.cpp.compiler.option.debugging.prof.1553682135" name="Generate prof information (-p)" superClass="gnu.cpp.compiler.option.debugging.prof"/>
+								<option id="gnu.cpp.compiler.option.debugging.gprof.1514341780" name="Generate gprof information (-pg)" superClass="gnu.cpp.compiler.option.debugging.gprof"/>
+								<option id="gnu.cpp.compiler.option.debugging.codecov.1607407469" name="Generate gcov information (-ftest-coverage -fprofile-arcs)" superClass="gnu.cpp.compiler.option.debugging.codecov"/>
+								<option id="gnu.cpp.compiler.option.warnings.syntax.1471768345" name="Check syntax only (-fsyntax-only)" superClass="gnu.cpp.compiler.option.warnings.syntax"/>
+								<option id="gnu.cpp.compiler.option.warnings.pedantic.294420887" name="Pedantic (-pedantic)" superClass="gnu.cpp.compiler.option.warnings.pedantic"/>
+								<option id="gnu.cpp.compiler.option.warnings.pedantic.error.1841088201" name="Pedantic warnings as errors (-pedantic-errors)" superClass="gnu.cpp.compiler.option.warnings.pedantic.error"/>
+								<option id="gnu.cpp.compiler.option.warnings.nowarn.818510041" name="Inhibit all warnings (-w)" superClass="gnu.cpp.compiler.option.warnings.nowarn"/>
+								<option id="gnu.cpp.compiler.option.warnings.allwarn.1061621067" name="All warnings (-Wall)" superClass="gnu.cpp.compiler.option.warnings.allwarn"/>
+								<option id="gnu.cpp.compiler.option.warnings.extrawarn.1399915586" name="Extra warnings (-Wextra)" superClass="gnu.cpp.compiler.option.warnings.extrawarn"/>
+								<option id="gnu.cpp.compiler.option.warnings.toerrors.1976804074" name="Warnings as errors (-Werror)" superClass="gnu.cpp.compiler.option.warnings.toerrors"/>
+								<option id="gnu.cpp.compiler.option.warnings.wconversion.471063888" name="Implicit conversion warnings (-Wconversion)" superClass="gnu.cpp.compiler.option.warnings.wconversion"/>
+								<option id="gnu.cpp.compiler.option.other.other.140549209" name="Other flags" superClass="gnu.cpp.compiler.option.other.other"/>
+								<option id="gnu.cpp.compiler.option.other.verbose.792498624" name="Verbose (-v)" superClass="gnu.cpp.compiler.option.other.verbose"/>
+								<option id="gnu.cpp.compiler.option.other.pic.640006400" name="Position Independent Code (-fPIC)" superClass="gnu.cpp.compiler.option.other.pic"/>
+								<option id="com.crt.advproject.cpp.lto.158000041" name="Enable Link-time optimization (-flto)" superClass="com.crt.advproject.cpp.lto"/>
+								<option id="com.crt.advproject.cpp.lto.fat.621553663" name="Fat lto objects (-ffat-lto-objects)" superClass="com.crt.advproject.cpp.lto.fat"/>
+								<option id="com.crt.advproject.cpp.fpu.1445330084" name="Floating point" superClass="com.crt.advproject.cpp.fpu"/>
+								<option id="com.crt.advproject.cpp.thumb.675662650" name="Thumb mode" superClass="com.crt.advproject.cpp.thumb"/>
+								<option id="com.crt.advproject.cpp.thumbinterwork.2142443817" name="Enable Thumb interworking" superClass="com.crt.advproject.cpp.thumbinterwork"/>
+								<option id="com.crt.advproject.cpp.hdrlib.1088874328" name="Library headers" superClass="com.crt.advproject.cpp.hdrlib"/>
+								<option id="com.crt.advproject.cpp.specs.1510636316" name="Specs" superClass="com.crt.advproject.cpp.specs"/>
+								<option id="com.crt.advproject.cpp.config.2069801533" name="Obsolete (Config)" superClass="com.crt.advproject.cpp.config"/>
+								<option id="com.crt.advproject.cpp.store.1948251668" name="Obsolete (Store)" superClass="com.crt.advproject.cpp.store"/>
+							</tool>
+							<tool id="com.crt.advproject.gcc.exe.debug.766196515" name="MCU C Compiler" superClass="com.crt.advproject.gcc.exe.debug">
+								<option id="com.crt.advproject.gcc.thumb.885618663" name="Thumb mode" superClass="com.crt.advproject.gcc.thumb" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.crt.advproject.gcc.arch.597938479" name="Architecture" superClass="com.crt.advproject.gcc.arch" useByScannerDiscovery="false" value="com.crt.advproject.gcc.target.cm4" valueType="enumerated"/>
+								<option id="com.crt.advproject.c.misc.dialect.1566060480" name="Language standard" superClass="com.crt.advproject.c.misc.dialect" useByScannerDiscovery="true" value="com.crt.advproject.misc.dialect.gnu99" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.dialect.flags.961375553" name="Other dialect flags" superClass="gnu.c.compiler.option.dialect.flags" useByScannerDiscovery="true"/>
+								<option id="gnu.c.compiler.option.preprocessor.nostdinc.243092885" name="Do not search system directories (-nostdinc)" superClass="gnu.c.compiler.option.preprocessor.nostdinc" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.preprocessor.preprocess.635191431" name="Preprocess only (-E)" superClass="gnu.c.compiler.option.preprocessor.preprocess" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1643758406" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="RAPID_IOT"/>
+									<listOptionValue builtIn="false" value="I2C_FSL"/>
+									<listOptionValue builtIn="false" value="HAVE_STDINT_H"/>
+									<listOptionValue builtIn="false" value="HAVE_STDBOOL_H"/>
+									<listOptionValue builtIn="false" value="THREAD_BORDER_ROUTER_CONFIG"/>
+									<listOptionValue builtIn="false" value="SDK_DEBUGCONSOLE=1"/>
+									<listOptionValue builtIn="false" value="__TARGET_FPU_VFP"/>
+									<listOptionValue builtIn="false" value="DEBUG"/>
+									<listOptionValue builtIn="false" value="NDEBUG"/>
+									<listOptionValue builtIn="false" value="USE_RTOS"/>
+									<listOptionValue builtIn="false" value="FSL_RTOS_FREE_RTOS"/>
+									<listOptionValue builtIn="false" value="ENABLE_RAM_VECTOR_TABLE=1"/>
+									<listOptionValue builtIn="false" value="FRDM_K64F_KW41Z=1"/>
+									<listOptionValue builtIn="false" value="FREEDOM"/>
+									<listOptionValue builtIn="false" value="__MCUXPRESSO"/>
+									<listOptionValue builtIn="false" value="__USE_CMSIS"/>
+									<listOptionValue builtIn="false" value="SDK_OS_FREE_RTOS"/>
+									<listOptionValue builtIn="false" value="CPU_MK64FN1M0VMD12"/>
+									<listOptionValue builtIn="false" value="__REDLIB__"/>
+									<listOptionValue builtIn="false" value="ATMO_STATIC_CORE"/>
+								</option>
+								<option id="gnu.c.compiler.option.preprocessor.undef.symbol.1214051316" name="Undefined symbols (-U)" superClass="gnu.c.compiler.option.preprocessor.undef.symbol" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.include.paths.2076271084" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/lwip/port}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/usb/device}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/usb/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/usb/osa}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/SerialManager/Source/USB_VirtualCom}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/smc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/microseconds}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/spi}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/microseconds}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/utilities}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/crc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/app_update}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/authentication/a100x}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/authentication/base64}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/nwk_ip/core/interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/nwk_ip/core/util}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/nwk_ip/core/interface/thread}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/nwk_ip/core/interface/modules}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/nwk_ip/examples/kinetis_host/inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/bluetooth/ble_shell}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/emWin/GUI/DisplayDriver}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/lwip/src/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/nwk_ip/examples/border_router/config}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/nwk_ip/examples/common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Flash/Internal}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/FSCI/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/FunctionLib}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/GPIO}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Keyboard/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Keyboard/Source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/LED/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/LED/Source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Lists}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/MemManager/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/MemManager/Source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Messaging/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Messaging/Source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/ModuleInfo}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/OSAbstraction/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/OSAbstraction/Source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Panic/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Panic/Source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Reset}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/SerialManager/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/SerialManager/Source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Shell/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Shell/Source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/TimersManager/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/TimersManager/Source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Common/rtos/FreeRTOS/config}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/devices/MK64F12}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/CMSIS_driver}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/emWin/GUI/Widget}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/emWin/GUI/WM}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/board}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/emWin/Config}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/emWin/GUI/Core}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/rtos/freertos/Source/portable/GCC/ARM_CM4F}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/rtos/freertos/Source/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/drivers}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/CMSIS}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/devices/MK64F12}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/authentication/a100x}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/nwk_ip/base/interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/nwk_ip/core/interface/thread}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/lwip/port}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/spi}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/lwip/src/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/nwk_ip/core/interface/modules}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/nwk_ip/core/interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/nwk_ip/examples/kinetis_host/inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/bluetooth/ble_shell}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/TimersManager/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/TimersManager/Source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Shell/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Shell/Source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/SerialManager/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/SerialManager/Source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/SerialManager/Source/SPI_Adapter}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Reset}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Panic/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Panic/Source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/OSAbstraction/Source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/ModuleInfo}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Messaging/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/MemManager/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Lists}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/LED/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Keyboard/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/GPIO}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/FunctionLib}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/FSCI/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Common/rtos/FreeRTOS/config}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/OSAbstraction/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/nwk_ip/examples/border_router/config}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/nwk_ip/examples/common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/CMSIS}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/emWin/Config}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/emWin/GUI/Core}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/emWin/GUI/Widget}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/emWin/GUI/DisplayDriver}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/emWin/GUI/WM}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/CMSIS_driver}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/board}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/rtos/freertos/Source/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/rtos/freertos/Source/portable/GCC/ARM_CM4F}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/drivers}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/board}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/adc}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/app_src}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/atmo}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/auth}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/battery}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/ble}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/block}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/board}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/buzzer}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/ccs811}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/cloud}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/datetime}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/ds1307}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/emWin}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/ens210}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/filesystem}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/fxas21002}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/fxos8700}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/gpio}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/http}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/i2c}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/interval}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mpl3115}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/nfc}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/pwm}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/ringbuffer}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/spi}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/sx9500}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/thread}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/tsl2572}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/uart}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/ui_template}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/user_buttons}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/wifi}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base}&quot;"/>
+
+									<listOptionValue builtIn="false" value="&quot;../../../../&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../../pictures&quot;"/>
+								</option>
+								<option id="gnu.c.compiler.option.include.files.496617259" name="Include files (-include)" superClass="gnu.c.compiler.option.include.files" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gcc.exe.debug.option.optimization.level.33223091" name="Optimization Level" superClass="com.crt.advproject.gcc.exe.debug.option.optimization.level" useByScannerDiscovery="false" value="gnu.c.optimization.level.none" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.optimization.flags.1344701319" name="Other optimization flags" superClass="gnu.c.compiler.option.optimization.flags" useByScannerDiscovery="false" value="-fno-common" valueType="string"/>
+								<option id="com.crt.advproject.gcc.exe.debug.option.debugging.level.851890236" name="Debug Level" superClass="com.crt.advproject.gcc.exe.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.default" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.debugging.other.2075379893" name="Other debugging flags" superClass="gnu.c.compiler.option.debugging.other" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.debugging.prof.683728384" name="Generate prof information (-p)" superClass="gnu.c.compiler.option.debugging.prof" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.debugging.gprof.1370155689" name="Generate gprof information (-pg)" superClass="gnu.c.compiler.option.debugging.gprof" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.debugging.codecov.2011145572" name="Generate gcov information (-ftest-coverage -fprofile-arcs)" superClass="gnu.c.compiler.option.debugging.codecov" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.syntax.1469707815" name="Check syntax only (-fsyntax-only)" superClass="gnu.c.compiler.option.warnings.syntax" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.pedantic.753367565" name="Pedantic (-pedantic)" superClass="gnu.c.compiler.option.warnings.pedantic" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.pedantic.error.1462258958" name="Pedantic warnings as errors (-pedantic-errors)" superClass="gnu.c.compiler.option.warnings.pedantic.error" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.nowarn.663657464" name="Inhibit all warnings (-w)" superClass="gnu.c.compiler.option.warnings.nowarn" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.allwarn.1299842933" name="All warnings (-Wall)" superClass="gnu.c.compiler.option.warnings.allwarn" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.extrawarn.1453086075" name="Extra warnings (-Wextra)" superClass="gnu.c.compiler.option.warnings.extrawarn" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.toerrors.1295724242" name="Warnings as errors (-Werror)" superClass="gnu.c.compiler.option.warnings.toerrors" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.wconversion.1840589730" name="Implicit conversion warnings (-Wconversion)" superClass="gnu.c.compiler.option.warnings.wconversion" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.misc.other.152383301" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-Wno-missing-braces  -c  -ffunction-sections  -fdata-sections  -ffreestanding  -fno-builtin -imacros &quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/nwk_ip/examples/border_router/config/config.h}&quot;" valueType="string"/>
+								<option id="gnu.c.compiler.option.misc.verbose.914591289" name="Verbose (-v)" superClass="gnu.c.compiler.option.misc.verbose" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.misc.ansi.690278567" name="Support ANSI programs (-ansi)" superClass="gnu.c.compiler.option.misc.ansi" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.misc.pic.470363219" name="Position Independent Code (-fPIC)" superClass="gnu.c.compiler.option.misc.pic" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gcc.lto.1662599183" name="Enable Link-time optimization (-flto)" superClass="com.crt.advproject.gcc.lto" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gcc.lto.fat.658591752" name="Fat lto objects (-ffat-lto-objects)" superClass="com.crt.advproject.gcc.lto.fat" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gcc.fpu.1299747442" name="Floating point" superClass="com.crt.advproject.gcc.fpu" useByScannerDiscovery="false" value="com.crt.advproject.gcc.fpu.fpv4.hard" valueType="enumerated"/>
+								<option id="com.crt.advproject.gcc.thumbinterwork.241935476" name="Enable Thumb interworking" superClass="com.crt.advproject.gcc.thumbinterwork" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gcc.hdrlib.1767229340" name="Library headers" superClass="com.crt.advproject.gcc.hdrlib" useByScannerDiscovery="false" value="com.crt.advproject.gcc.hdrlib.codered" valueType="enumerated"/>
+								<option id="com.crt.advproject.gcc.specs.784477624" name="Specs" superClass="com.crt.advproject.gcc.specs" useByScannerDiscovery="false" value="com.crt.advproject.gcc.specs.codered" valueType="enumerated"/>
+								<option id="com.crt.advproject.gcc.config.991208341" name="Obsolete (Config)" superClass="com.crt.advproject.gcc.config" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gcc.store.1731996830" name="Obsolete (Store)" superClass="com.crt.advproject.gcc.store" useByScannerDiscovery="false"/>
+								<inputType id="com.crt.advproject.compiler.input.833687507" superClass="com.crt.advproject.compiler.input"/>
+							</tool>
+							<tool id="com.crt.advproject.gas.exe.debug.758000992" name="MCU Assembler" superClass="com.crt.advproject.gas.exe.debug">
+								<option id="com.crt.advproject.gas.thumb.1064643889" name="Thumb mode" superClass="com.crt.advproject.gas.thumb" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.crt.advproject.gas.arch.1435440676" name="Architecture" superClass="com.crt.advproject.gas.arch" useByScannerDiscovery="false" value="com.crt.advproject.gas.target.cm4" valueType="enumerated"/>
+								<option id="gnu.both.asm.option.flags.crt.1885413366" name="Assembler flags" superClass="gnu.both.asm.option.flags.crt" useByScannerDiscovery="false" value="-c -x assembler-with-cpp -D__REDLIB__" valueType="string"/>
+								<option id="gnu.both.asm.option.include.paths.1462999312" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/devices/MK64F12}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/nwk_ip/base/interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/nwk_ip/core/interface/thread}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/lwip/port}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/spi}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/lwip/src/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/nwk_ip/core/interface/modules}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/nwk_ip/core/interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/nwk_ip/examples/kinetis_host/inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/bluetooth/ble_shell}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/TimersManager/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/TimersManager/Source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Shell/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Shell/Source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/SerialManager/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/SerialManager/Source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/SerialManager/Source/SPI_Adapter}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Reset}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Panic/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Panic/Source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/OSAbstraction/Source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/ModuleInfo}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Messaging/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/MemManager/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Lists}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/LED/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Keyboard/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/GPIO}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/FunctionLib}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/FSCI/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Common/rtos/FreeRTOS/config}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/Common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/framework/OSAbstraction/Interface}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/nwk_ip/examples/border_router/config}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/middleware/wireless/nwk_ip/examples/common}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/CMSIS}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/emWin/Config}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/emWin/GUI/Core}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/emWin/GUI/Widget}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/emWin/GUI/DisplayDriver}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/emWin/GUI/WM}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/CMSIS_driver}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/board}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/rtos/freertos/Source/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/rtos/freertos/Source/portable/GCC/ARM_CM4F}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/drivers}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/board}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/adc}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/app_src}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/atmo}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/auth}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/battery}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/ble}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/block}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/board}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/buzzer}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/ccs811}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/cloud}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/datetime}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/ds1307}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/emWin}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/ens210}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/filesystem}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/fxas21002}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/fxos8700}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/gpio}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/http}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/i2c}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/interval}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mpl3115}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/nfc}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/pwm}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/ringbuffer}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/spi}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/sx9500}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/thread}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/tsl2572}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/uart}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/ui_template}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/user_buttons}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/wifi}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base}&quot;"/>
+
+									<listOptionValue builtIn="false" value="&quot;../../../../&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../../pictures&quot;"/>
+								</option>
+								<option id="gnu.both.asm.option.warnings.nowarn.538718963" name="Suppress warnings (-W)" superClass="gnu.both.asm.option.warnings.nowarn" useByScannerDiscovery="false"/>
+								<option id="gnu.both.asm.option.version.1938748929" name="Announce version (-v)" superClass="gnu.both.asm.option.version" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gas.exe.debug.option.debugging.level.125908834" name="Debug level" superClass="com.crt.advproject.gas.exe.debug.option.debugging.level" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gas.fpu.534320521" name="Floating point" superClass="com.crt.advproject.gas.fpu" useByScannerDiscovery="false" value="com.crt.advproject.gas.fpu.fpv4.hard" valueType="enumerated"/>
+								<option id="com.crt.advproject.gas.thumbinterwork.523795007" name="Enable Thumb interworking" superClass="com.crt.advproject.gas.thumbinterwork" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gas.hdrlib.1747748858" name="Library headers" superClass="com.crt.advproject.gas.hdrlib" useByScannerDiscovery="false" value="com.crt.advproject.gas.hdrlib.codered" valueType="enumerated"/>
+								<option id="com.crt.advproject.gas.specs.183630618" name="Specs" superClass="com.crt.advproject.gas.specs" useByScannerDiscovery="false" value="com.crt.advproject.gas.specs.codered" valueType="enumerated"/>
+								<option id="com.crt.advproject.gas.config.1771215847" name="Obsolete (Config)" superClass="com.crt.advproject.gas.config" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gas.store.89796179" name="Obsolete (Store)" superClass="com.crt.advproject.gas.store" useByScannerDiscovery="false"/>
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1376459972" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+								<inputType id="com.crt.advproject.assembler.input.880778630" name="Additional Assembly Source Files" superClass="com.crt.advproject.assembler.input"/>
+							</tool>
+							<tool id="com.crt.advproject.link.cpp.exe.debug.2035483342" name="MCU C++ Linker" superClass="com.crt.advproject.link.cpp.exe.debug">
+								<option id="com.crt.advproject.link.cpp.arch.607175254" name="Architecture" superClass="com.crt.advproject.link.cpp.arch" value="com.crt.advproject.link.cpp.target.cm0plus" valueType="enumerated"/>
+								<option id="com.crt.advproject.link.cpp.fpu.182501164" name="Floating point" superClass="com.crt.advproject.link.cpp.fpu" value="com.crt.advproject.link.cpp.fpu.none" valueType="enumerated"/>
+								<option id="gnu.cpp.link.option.nostart.460090800" name="Do not use standard start files (-nostartfiles)" superClass="gnu.cpp.link.option.nostart"/>
+								<option id="gnu.cpp.link.option.nodeflibs.157423039" name="Do not use default libraries (-nodefaultlibs)" superClass="gnu.cpp.link.option.nodeflibs"/>
+								<option id="gnu.cpp.link.option.nostdlibs.1884497711" name="No startup or default libs (-nostdlib)" superClass="gnu.cpp.link.option.nostdlibs" value="true" valueType="boolean"/>
+								<option id="gnu.cpp.link.option.strip.1112195102" name="Omit all symbol information (-s)" superClass="gnu.cpp.link.option.strip"/>
+								<option id="gnu.cpp.link.option.libs.1434623333" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="_crypto_m0"/>
+									<listOptionValue builtIn="false" value="802.15.4_mac_thr_cm0"/>
+									<listOptionValue builtIn="false" value="_thread_br_cm0"/>
+								</option>
+								<option id="gnu.cpp.link.option.paths.578575584" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="&quot;../../../../middleware/wireless/libs&quot;"/>
+								</option>
+								<option id="gnu.cpp.link.option.flags.770122100" name="Linker flags" superClass="gnu.cpp.link.option.flags"/>
+								<option id="gnu.cpp.link.option.other.492807112" name="Other options (-Xlinker [option])" superClass="gnu.cpp.link.option.other" valueType="stringList">
+									<listOptionValue builtIn="false" value="-Map=&quot;${BuildArtifactFileBaseName}.map&quot;"/>
+									<listOptionValue builtIn="false" value="--gc-sections"/>
+									<listOptionValue builtIn="false" value="-print-memory-usage"/>
+								</option>
+								<option id="gnu.cpp.link.option.userobjs.1022840937" name="Other objects" superClass="gnu.cpp.link.option.userobjs"/>
+								<option id="gnu.cpp.link.option.shared.1205756924" name="Shared (-shared)" superClass="gnu.cpp.link.option.shared"/>
+								<option id="gnu.cpp.link.option.soname.1376420089" name="Shared object name (-Wl,-soname=)" superClass="gnu.cpp.link.option.soname"/>
+								<option id="gnu.cpp.link.option.implname.1577217266" name="Import Library name (-Wl,--out-implib=)" superClass="gnu.cpp.link.option.implname"/>
+								<option id="gnu.cpp.link.option.defname.491166226" name="DEF file name (-Wl,--output-def=)" superClass="gnu.cpp.link.option.defname"/>
+								<option id="gnu.cpp.link.option.debugging.prof.1679850556" name="Generate prof information (-p)" superClass="gnu.cpp.link.option.debugging.prof"/>
+								<option id="gnu.cpp.link.option.debugging.gprof.1847409839" name="Generate gprof information (-pg)" superClass="gnu.cpp.link.option.debugging.gprof"/>
+								<option id="gnu.cpp.link.option.debugging.codecov.1992682580" name="Generate gcov information (-ftest-coverage -fprofile-arcs)" superClass="gnu.cpp.link.option.debugging.codecov"/>
+								<option id="com.crt.advproject.link.cpp.lto.2064737418" name="Enable Link-time optimization (-flto)" superClass="com.crt.advproject.link.cpp.lto"/>
+								<option id="com.crt.advproject.link.cpp.lto.optmization.level.1362599429" name="Link-time optimization level" superClass="com.crt.advproject.link.cpp.lto.optmization.level"/>
+								<option id="com.crt.advproject.link.cpp.thumb.554738223" name="Thumb mode" superClass="com.crt.advproject.link.cpp.thumb"/>
+								<option id="com.crt.advproject.link.cpp.manage.564684591" name="Manage linker script" superClass="com.crt.advproject.link.cpp.manage" value="true" valueType="boolean"/>
+								<option id="com.crt.advproject.link.cpp.crpenable.323074295" name="Enable automatic placement of Code Read Protection field in image" superClass="com.crt.advproject.link.cpp.crpenable"/>
+								<option id="com.crt.advproject.link.cpp.flashconfigenable.2049730715" name="Enable automatic placement of Flash Configuration field in image" superClass="com.crt.advproject.link.cpp.flashconfigenable" value="true" valueType="boolean"/>
+								<option id="com.crt.advproject.link.cpp.ecrp.1757952047" name="Enhanced CRP" superClass="com.crt.advproject.link.cpp.ecrp"/>
+								<option id="com.crt.advproject.link.cpp.toram.1591415045" name="Link application to RAM" superClass="com.crt.advproject.link.cpp.toram"/>
+								<option id="com.crt.advproject.link.cpp.stackOffset.301732747" name="Stack offset" superClass="com.crt.advproject.link.cpp.stackOffset"/>
+								<option id="com.crt.advproject.link.cpp.hdrlib.327198941" name="Library" superClass="com.crt.advproject.link.cpp.hdrlib" value="com.crt.advproject.cpp.link.hdrlib.newlib.semihost" valueType="enumerated"/>
+								<option id="com.crt.advproject.link.cpp.nanofloat.790053127" name="Enable printf float " superClass="com.crt.advproject.link.cpp.nanofloat"/>
+								<option id="com.crt.advproject.link.cpp.nanofloat.scanf.306040753" name="Enable scanf float " superClass="com.crt.advproject.link.cpp.nanofloat.scanf"/>
+								<option id="com.crt.advproject.link.cpp.script.1317073978" name="Linker script" superClass="com.crt.advproject.link.cpp.script"/>
+								<option id="com.crt.advproject.link.cpp.scriptdir.2065437707" name="Script path" superClass="com.crt.advproject.link.cpp.scriptdir"/>
+								<option id="com.crt.advproject.link.memory.heapAndStack.style.cpp.231661152" name="Heap and Stack placement" superClass="com.crt.advproject.link.memory.heapAndStack.style.cpp"/>
+								<option id="com.crt.advproject.link.memory.heapAndStack.cpp.652285397" name="Heap and Stack options" superClass="com.crt.advproject.link.memory.heapAndStack.cpp"/>
+								<option id="com.crt.advproject.link.cpp.multicore.slave.1341859689" name="Multicore configuration" superClass="com.crt.advproject.link.cpp.multicore.slave"/>
+								<option id="com.crt.advproject.link.cpp.multicore.master.539646895" name="Multicore master" superClass="com.crt.advproject.link.cpp.multicore.master"/>
+								<option id="com.crt.advproject.link.cpp.multicore.empty.1177849892" name="No Multicore options for this project" superClass="com.crt.advproject.link.cpp.multicore.empty"/>
+								<option id="com.crt.advproject.link.cpp.multicore.master.userobjs.1556491614" name="Slave Objects (not visible)" superClass="com.crt.advproject.link.cpp.multicore.master.userobjs"/>
+								<option id="com.crt.advproject.link.cpp.config.1303200653" name="Obsolete (Config)" superClass="com.crt.advproject.link.cpp.config"/>
+								<option id="com.crt.advproject.link.cpp.store.949750825" name="Obsolete (Store)" superClass="com.crt.advproject.link.cpp.store"/>
+							</tool>
+							<tool id="com.crt.advproject.link.exe.debug.1194224661" name="MCU Linker" superClass="com.crt.advproject.link.exe.debug">
+								<option id="com.crt.advproject.link.thumb.1097995447" name="Thumb mode" superClass="com.crt.advproject.link.thumb" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.crt.advproject.link.memory.heapAndStack.818961196" name="Heap and Stack options" superClass="com.crt.advproject.link.memory.heapAndStack" useByScannerDiscovery="false" value="&amp;Heap:Default;Post Data;Default&amp;Stack:Default;End;Default" valueType="string"/>
+								<option id="com.crt.advproject.link.gcc.multicore.master.userobjs.1815129926" name="Slave Objects (not visible)" superClass="com.crt.advproject.link.gcc.multicore.master.userobjs" useByScannerDiscovery="false" valueType="userObjs"/>
+								<option id="com.crt.advproject.link.arch.1076377863" name="Architecture" superClass="com.crt.advproject.link.arch" useByScannerDiscovery="false" value="com.crt.advproject.link.target.cm4" valueType="enumerated"/>
+								<option id="gnu.c.link.option.nostart.1207457727" name="Do not use standard start files (-nostartfiles)" superClass="gnu.c.link.option.nostart" useByScannerDiscovery="false"/>
+								<option id="gnu.c.link.option.nodeflibs.1294576034" name="Do not use default libraries (-nodefaultlibs)" superClass="gnu.c.link.option.nodeflibs" useByScannerDiscovery="false"/>
+								<option id="gnu.c.link.option.nostdlibs.1409155900" name="No startup or default libs (-nostdlib)" superClass="gnu.c.link.option.nostdlibs" useByScannerDiscovery="false"/>
+								<option id="gnu.c.link.option.strip.1167825906" name="Omit all symbol information (-s)" superClass="gnu.c.link.option.strip" useByScannerDiscovery="false"/>
+								<option id="gnu.c.link.option.noshared.1278755525" name="No shared libraries (-static)" superClass="gnu.c.link.option.noshared" useByScannerDiscovery="false"/>
+								<option id="gnu.c.link.option.libs.1680504297" name="Libraries (-l)" superClass="gnu.c.link.option.libs" useByScannerDiscovery="false" valueType="libs">
+									<listOptionValue builtIn="false" value="m"/>
+									<listOptionValue builtIn="false" value="c"/>
+									<listOptionValue builtIn="false" value="gcc"/>
+									<listOptionValue builtIn="false" value="nosys"/>
+									<listOptionValue builtIn="false" value="emWin_M4F"/>
+								</option>
+								<option id="gnu.c.link.option.paths.682567226" name="Library search path (-L)" superClass="gnu.c.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lib}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/RapidIot_Base/Debug}&quot;"/>
+								</option>
+								<option id="gnu.c.link.option.ldflags.132875111" name="Linker flags" superClass="gnu.c.link.option.ldflags" useByScannerDiscovery="false" value="" valueType="string"/>
+								<option id="gnu.c.link.option.other.90402429" name="Other options (-Xlinker [option])" superClass="gnu.c.link.option.other" useByScannerDiscovery="false" valueType="stringList">
+									<listOptionValue builtIn="false" value="-Map=&quot;${BuildArtifactFileBaseName}.map&quot;"/>
+									<listOptionValue builtIn="false" value="--gc-sections"/>
+									<listOptionValue builtIn="false" value="-print-memory-usage"/>
+								</option>
+								<option id="gnu.c.link.option.userobjs.2143780821" name="Other objects" superClass="gnu.c.link.option.userobjs" useByScannerDiscovery="false"/>
+								<option id="gnu.c.link.option.shared.1797767992" name="Shared (-shared)" superClass="gnu.c.link.option.shared" useByScannerDiscovery="false"/>
+								<option id="gnu.c.link.option.soname.1463228551" name="Shared object name (-Wl,-soname=)" superClass="gnu.c.link.option.soname" useByScannerDiscovery="false"/>
+								<option id="gnu.c.link.option.implname.2095390491" name="Import Library name (-Wl,--out-implib=)" superClass="gnu.c.link.option.implname" useByScannerDiscovery="false"/>
+								<option id="gnu.c.link.option.defname.1241950713" name="DEF file name (-Wl,--output-def=)" superClass="gnu.c.link.option.defname" useByScannerDiscovery="false"/>
+								<option id="gnu.c.link.option.debugging.prof.2105635723" name="Generate prof information (-p)" superClass="gnu.c.link.option.debugging.prof" useByScannerDiscovery="false"/>
+								<option id="gnu.c.link.option.debugging.gprof.460289341" name="Generate gprof information (-pg)" superClass="gnu.c.link.option.debugging.gprof" useByScannerDiscovery="false"/>
+								<option id="gnu.c.link.option.debugging.codecov.274050153" name="Generate gcov information (-ftest-coverage -fprofile-arcs)" superClass="gnu.c.link.option.debugging.codecov" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.link.gcc.lto.75645623" name="Enable Link-time optimization (-flto)" superClass="com.crt.advproject.link.gcc.lto" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.link.gcc.lto.optmization.level.841160587" name="Link-time optimization level" superClass="com.crt.advproject.link.gcc.lto.optmization.level" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.link.fpu.1335145555" name="Floating point" superClass="com.crt.advproject.link.fpu" useByScannerDiscovery="false" value="com.crt.advproject.link.fpu.fpv4.hard" valueType="enumerated"/>
+								<option id="com.crt.advproject.link.manage.2112116474" name="Manage linker script" superClass="com.crt.advproject.link.manage" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.link.crpenable.351674648" name="Enable automatic placement of Code Read Protection field in image" superClass="com.crt.advproject.link.crpenable" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.link.flashconfigenable.595292458" name="Enable automatic placement of Flash Configuration field in image" superClass="com.crt.advproject.link.flashconfigenable" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option id="com.crt.advproject.link.ecrp.313484596" name="Enhanced CRP" superClass="com.crt.advproject.link.ecrp" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.link.toram.1700658220" name="Link application to RAM" superClass="com.crt.advproject.link.toram" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.link.stackOffset.1970529675" name="Stack offset" superClass="com.crt.advproject.link.stackOffset" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.link.gcc.hdrlib.1911741009" name="Library" superClass="com.crt.advproject.link.gcc.hdrlib" useByScannerDiscovery="false" value="com.crt.advproject.gcc.link.hdrlib.codered.semihost_nf" valueType="enumerated"/>
+								<option id="com.crt.advproject.link.gcc.nanofloat.1640411781" name="Enable printf float " superClass="com.crt.advproject.link.gcc.nanofloat" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.link.gcc.nanofloat.scanf.1358712405" name="Enable scanf float " superClass="com.crt.advproject.link.gcc.nanofloat.scanf" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.link.script.1911521358" name="Linker script" superClass="com.crt.advproject.link.script" useByScannerDiscovery="false" value="MK64FN1M0xxx12_connectivity.ld" valueType="string"/>
+								<option id="com.crt.advproject.link.scriptdir.2089909269" name="Script path" superClass="com.crt.advproject.link.scriptdir" useByScannerDiscovery="false" value="../" valueType="string"/>
+								<option defaultValue="com.crt.advproject.heapAndStack.mcuXpressoStyle" id="com.crt.advproject.link.memory.heapAndStack.style.1506122869" name="Heap and Stack placement" superClass="com.crt.advproject.link.memory.heapAndStack.style" useByScannerDiscovery="false" value="com.crt.advproject.heapAndStack.mcuXpressoStyle" valueType="enumerated"/>
+								<option id="com.crt.advproject.link.gcc.multicore.slave.361775419" name="Multicore configuration" superClass="com.crt.advproject.link.gcc.multicore.slave" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.link.gcc.multicore.master.1170755013" name="Multicore master" superClass="com.crt.advproject.link.gcc.multicore.master" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.link.gcc.multicore.empty.159751830" name="No Multicore options for this project" superClass="com.crt.advproject.link.gcc.multicore.empty" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.link.config.1160970427" name="Obsolete (Config)" superClass="com.crt.advproject.link.config" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.link.store.1157264954" name="Obsolete (Store)" superClass="com.crt.advproject.link.store" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.link.memory.load.image.1881183218" superClass="com.crt.advproject.link.memory.load.image" value="" valueType="string"/>
+								<option id="com.crt.advproject.link.memory.data.851429611" superClass="com.crt.advproject.link.memory.data" value="" valueType="string"/>
+								<option id="com.crt.advproject.link.memory.sections.795346348" superClass="com.crt.advproject.link.memory.sections" valueType="stringList"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.1980750775" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+						</toolChain>
+					</folderInfo>
+					<fileInfo id="com.crt.advproject.config.exe.debug.880554757.1200507782" name="fsl_dspi_dma.h" rcbsApplicability="disable" resourcePath="drivers/dspi/fsl_dspi_dma.h" toolsToInvoke=""/>
+					<fileInfo id="com.crt.advproject.config.exe.debug.880554757.558872574" name="fsl_dspi_ucosiii.h" rcbsApplicability="disable" resourcePath="drivers/dspi/fsl_dspi_ucosiii.h" toolsToInvoke=""/>
+					<fileInfo id="com.crt.advproject.config.exe.debug.880554757.1802512252" name="fsl_dspi_ucosii.h" rcbsApplicability="disable" resourcePath="drivers/dspi/fsl_dspi_ucosii.h" toolsToInvoke=""/>
+					<fileInfo id="com.crt.advproject.config.exe.debug.880554757.1966326844" name="fsl_dspi_edma.h" rcbsApplicability="disable" resourcePath="drivers/dspi/fsl_dspi_edma.h" toolsToInvoke=""/>
+					<fileInfo id="com.crt.advproject.config.exe.debug.880554757.311193061" name="fsl_uart_dma.h" rcbsApplicability="disable" resourcePath="drivers/uart/fsl_uart_dma.h" toolsToInvoke=""/>
+					<fileInfo id="com.crt.advproject.config.exe.debug.880554757.586129541" name="fsl_uart_ucosii.h" rcbsApplicability="disable" resourcePath="drivers/uart/fsl_uart_ucosii.h" toolsToInvoke=""/>
+					<fileInfo id="com.crt.advproject.config.exe.debug.880554757.1264012593" name="fsl_uart_edma.h" rcbsApplicability="disable" resourcePath="drivers/uart/fsl_uart_edma.h" toolsToInvoke=""/>
+					<fileInfo id="com.crt.advproject.config.exe.debug.880554757.1734510" name="fsl_uart_ucosiii.h" rcbsApplicability="disable" resourcePath="drivers/uart/fsl_uart_ucosiii.h" toolsToInvoke=""/>
+					<fileInfo id="com.crt.advproject.config.exe.debug.880554757.1740069459" name="fsl_i2c_ucosii.h" rcbsApplicability="disable" resourcePath="drivers/i2c/fsl_i2c_ucosii.h" toolsToInvoke=""/>
+					<fileInfo id="com.crt.advproject.config.exe.debug.880554757.406787724" name="fsl_i2c_ucosiii.h" rcbsApplicability="disable" resourcePath="drivers/i2c/fsl_i2c_ucosiii.h" toolsToInvoke=""/>
+					<fileInfo id="com.crt.advproject.config.exe.debug.880554757.226843359" name="fsl_i2c_dma.h" rcbsApplicability="disable" resourcePath="drivers/i2c/fsl_i2c_dma.h" toolsToInvoke=""/>
+					<fileInfo id="com.crt.advproject.config.exe.debug.880554757.1108874083" name="fsl_i2c_edma.h" rcbsApplicability="disable" resourcePath="drivers/i2c/fsl_i2c_edma.h" toolsToInvoke=""/>
+					<fileInfo id="com.crt.advproject.config.exe.debug.880554757.810301484" name="fsl_i2c_freertos.h" rcbsApplicability="disable" resourcePath="drivers/i2c/fsl_i2c_freertos.h" toolsToInvoke=""/>
+					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="adc"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="app_src"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="atmo"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="auth"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="battery"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="ble"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="block"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="board"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="buzzer"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="ccs811"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="cloud"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="datetime"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="ds1307"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="emWin"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="ens210"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="filesystem"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="fxas21002"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="fxos8700"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="gpio"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="http"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="i2c"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="interval"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="lib"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="mpl3115"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="nfc"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="pwm"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="ringbuffer"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="spi"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="sx9500"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="thread"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="tsl2572"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="uart"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="ui_template"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="user_buttons"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="wifi"/>
+<entry flags="VALUE_WORKSPACE_PATH" kind="sourcePath" name="RapidIot_Base"/>
+
+					</sourceEntries>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="frdmk64f_kw41z_kinetis_host_freertos.null.2096151408" name="frdmk64f_kw41z_kinetis_host_freertos" projectType="com.crt.advproject.projecttype.exe"/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="com.crt.advproject.config.exe.release.318083105;com.crt.advproject.config.exe.release.318083105.;com.crt.advproject.gas.exe.release.78960009;com.crt.advproject.assembler.input.707389487">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.crt.advproject.GCCManagedMakePerProjectProfile"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.crt.advproject.config.exe.debug.880554757;com.crt.advproject.config.exe.debug.880554757.;com.crt.advproject.gas.exe.debug.758000992;com.crt.advproject.assembler.input.880778630">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.crt.advproject.GCCManagedMakePerProjectProfile"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.crt.advproject.config.exe.release.318083105;com.crt.advproject.config.exe.release.318083105.;com.crt.advproject.gcc.exe.release.1008620351;com.crt.advproject.compiler.input.1370440114">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.crt.advproject.GCCManagedMakePerProjectProfile"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="com.crt.advproject.config.exe.debug.880554757;com.crt.advproject.config.exe.debug.880554757.;com.crt.advproject.gcc.exe.debug.766196515;com.crt.advproject.compiler.input.833687507">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.crt.advproject.GCCManagedMakePerProjectProfile"/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="com.crt.config">
+		<projectStorage>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;TargetConfig&gt;
+&lt;Properties property_3="NXP" property_4="MK64FN1M0xxx12" property_count="5" version="70200"/&gt;
+&lt;infoList vendor="NXP"&gt;&lt;info chip="MK64FN1M0xxx12" name="MK64FN1M0xxx12"&gt;&lt;chip&gt;&lt;name&gt;MK64FN1M0xxx12&lt;/name&gt;
+&lt;family&gt;K6x&lt;/family&gt;
+&lt;vendor&gt;NXP&lt;/vendor&gt;
+&lt;memory can_program="true" id="Flash" is_ro="true" size="0" type="Flash"/&gt;
+&lt;memory id="RAM" size="0" type="RAM"/&gt;
+&lt;memoryInstance derived_from="Flash" driver="FTFE_4K.cfx" id="PROGRAM_FLASH" location="0x0" size="0x100000"/&gt;
+&lt;memoryInstance derived_from="RAM" id="SRAM_UPPER" location="0x20000000" size="0x30000"/&gt;
+&lt;memoryInstance derived_from="RAM" id="SRAM_LOWER" location="0x1fff0000" size="0x10000"/&gt;
+&lt;memoryInstance derived_from="RAM" id="FLEX_RAM" location="0x14000000" size="0x1000"/&gt;
+&lt;peripheralInstance derived_from="FTFE_FlashConfig" id="FTFE_FlashConfig" location="0x400"/&gt;
+&lt;peripheralInstance derived_from="AIPS0" id="AIPS0" location="0x40000000"/&gt;
+&lt;peripheralInstance derived_from="AIPS1" id="AIPS1" location="0x40080000"/&gt;
+&lt;peripheralInstance derived_from="AXBS" id="AXBS" location="0x40004000"/&gt;
+&lt;peripheralInstance derived_from="DMA" id="DMA" location="0x40008000"/&gt;
+&lt;peripheralInstance derived_from="FB" id="FB" location="0x4000C000"/&gt;
+&lt;peripheralInstance derived_from="SYSMPU" id="SYSMPU" location="0x4000D000"/&gt;
+&lt;peripheralInstance derived_from="FMC" id="FMC" location="0x4001F000"/&gt;
+&lt;peripheralInstance derived_from="FTFE" id="FTFE" location="0x40020000"/&gt;
+&lt;peripheralInstance derived_from="DMAMUX" id="DMAMUX" location="0x40021000"/&gt;
+&lt;peripheralInstance derived_from="CAN0" id="CAN0" location="0x40024000"/&gt;
+&lt;peripheralInstance derived_from="RNG" id="RNG" location="0x40029000"/&gt;
+&lt;peripheralInstance derived_from="SPI0" id="SPI0" location="0x4002C000"/&gt;
+&lt;peripheralInstance derived_from="SPI1" id="SPI1" location="0x4002D000"/&gt;
+&lt;peripheralInstance derived_from="SPI2" id="SPI2" location="0x400AC000"/&gt;
+&lt;peripheralInstance derived_from="I2S0" id="I2S0" location="0x4002F000"/&gt;
+&lt;peripheralInstance derived_from="CRC" id="CRC" location="0x40032000"/&gt;
+&lt;peripheralInstance derived_from="USBDCD" id="USBDCD" location="0x40035000"/&gt;
+&lt;peripheralInstance derived_from="PDB0" id="PDB0" location="0x40036000"/&gt;
+&lt;peripheralInstance derived_from="PIT" id="PIT" location="0x40037000"/&gt;
+&lt;peripheralInstance derived_from="FTM0" id="FTM0" location="0x40038000"/&gt;
+&lt;peripheralInstance derived_from="FTM1" id="FTM1" location="0x40039000"/&gt;
+&lt;peripheralInstance derived_from="FTM2" id="FTM2" location="0x4003A000"/&gt;
+&lt;peripheralInstance derived_from="FTM3" id="FTM3" location="0x400B9000"/&gt;
+&lt;peripheralInstance derived_from="ADC0" id="ADC0" location="0x4003B000"/&gt;
+&lt;peripheralInstance derived_from="ADC1" id="ADC1" location="0x400BB000"/&gt;
+&lt;peripheralInstance derived_from="RTC" id="RTC" location="0x4003D000"/&gt;
+&lt;peripheralInstance derived_from="RFVBAT" id="RFVBAT" location="0x4003E000"/&gt;
+&lt;peripheralInstance derived_from="LPTMR0" id="LPTMR0" location="0x40040000"/&gt;
+&lt;peripheralInstance derived_from="RFSYS" id="RFSYS" location="0x40041000"/&gt;
+&lt;peripheralInstance derived_from="SIM" id="SIM" location="0x40047000"/&gt;
+&lt;peripheralInstance derived_from="PORTA" id="PORTA" location="0x40049000"/&gt;
+&lt;peripheralInstance derived_from="PORTB" id="PORTB" location="0x4004A000"/&gt;
+&lt;peripheralInstance derived_from="PORTC" id="PORTC" location="0x4004B000"/&gt;
+&lt;peripheralInstance derived_from="PORTD" id="PORTD" location="0x4004C000"/&gt;
+&lt;peripheralInstance derived_from="PORTE" id="PORTE" location="0x4004D000"/&gt;
+&lt;peripheralInstance derived_from="WDOG" id="WDOG" location="0x40052000"/&gt;
+&lt;peripheralInstance derived_from="EWM" id="EWM" location="0x40061000"/&gt;
+&lt;peripheralInstance derived_from="CMT" id="CMT" location="0x40062000"/&gt;
+&lt;peripheralInstance derived_from="MCG" id="MCG" location="0x40064000"/&gt;
+&lt;peripheralInstance derived_from="OSC" id="OSC" location="0x40065000"/&gt;
+&lt;peripheralInstance derived_from="I2C0" id="I2C0" location="0x40066000"/&gt;
+&lt;peripheralInstance derived_from="I2C1" id="I2C1" location="0x40067000"/&gt;
+&lt;peripheralInstance derived_from="I2C2" id="I2C2" location="0x400E6000"/&gt;
+&lt;peripheralInstance derived_from="UART0" id="UART0" location="0x4006A000"/&gt;
+&lt;peripheralInstance derived_from="UART1" id="UART1" location="0x4006B000"/&gt;
+&lt;peripheralInstance derived_from="UART2" id="UART2" location="0x4006C000"/&gt;
+&lt;peripheralInstance derived_from="UART3" id="UART3" location="0x4006D000"/&gt;
+&lt;peripheralInstance derived_from="UART4" id="UART4" location="0x400EA000"/&gt;
+&lt;peripheralInstance derived_from="UART5" id="UART5" location="0x400EB000"/&gt;
+&lt;peripheralInstance derived_from="USB0" id="USB0" location="0x40072000"/&gt;
+&lt;peripheralInstance derived_from="CMP0" id="CMP0" location="0x40073000"/&gt;
+&lt;peripheralInstance derived_from="CMP1" id="CMP1" location="0x40073008"/&gt;
+&lt;peripheralInstance derived_from="CMP2" id="CMP2" location="0x40073010"/&gt;
+&lt;peripheralInstance derived_from="VREF" id="VREF" location="0x40074000"/&gt;
+&lt;peripheralInstance derived_from="LLWU" id="LLWU" location="0x4007C000"/&gt;
+&lt;peripheralInstance derived_from="PMC" id="PMC" location="0x4007D000"/&gt;
+&lt;peripheralInstance derived_from="SMC" id="SMC" location="0x4007E000"/&gt;
+&lt;peripheralInstance derived_from="RCM" id="RCM" location="0x4007F000"/&gt;
+&lt;peripheralInstance derived_from="SDHC" id="SDHC" location="0x400B1000"/&gt;
+&lt;peripheralInstance derived_from="ENET" id="ENET" location="0x400C0000"/&gt;
+&lt;peripheralInstance derived_from="DAC0" id="DAC0" location="0x400CC000"/&gt;
+&lt;peripheralInstance derived_from="DAC1" id="DAC1" location="0x400CD000"/&gt;
+&lt;peripheralInstance derived_from="GPIOA" id="GPIOA" location="0x400FF000"/&gt;
+&lt;peripheralInstance derived_from="GPIOB" id="GPIOB" location="0x400FF040"/&gt;
+&lt;peripheralInstance derived_from="GPIOC" id="GPIOC" location="0x400FF080"/&gt;
+&lt;peripheralInstance derived_from="GPIOD" id="GPIOD" location="0x400FF0C0"/&gt;
+&lt;peripheralInstance derived_from="GPIOE" id="GPIOE" location="0x400FF100"/&gt;
+&lt;peripheralInstance derived_from="SystemControl" id="SystemControl" location="0xE000E000"/&gt;
+&lt;peripheralInstance derived_from="SysTick" id="SysTick" location="0xE000E010"/&gt;
+&lt;peripheralInstance derived_from="NVIC" id="NVIC" location="0xE000E100"/&gt;
+&lt;peripheralInstance derived_from="MCM" id="MCM" location="0xE0080000"/&gt;
+&lt;peripheralInstance derived_from="CAU" id="CAU" location="0xE0081000"/&gt;
+&lt;/chip&gt;
+&lt;processor&gt;&lt;name gcc_name="cortex-m4"&gt;Cortex-M4&lt;/name&gt;
+&lt;family&gt;Cortex-M&lt;/family&gt;
+&lt;/processor&gt;
+&lt;link href="MK64F12_internal_peripheral.xml" show="embed" type="simple"/&gt;
+&lt;/info&gt;
+&lt;/infoList&gt;
+&lt;/TargetConfig&gt;</projectStorage>
+	</storageModule>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/K64_Host"/>
+		</configuration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="com.nxp.mcuxpresso.core.datamodels">
+		<sdkName>SDK_2.x_RapidIoT_MK64F12</sdkName>
+		<sdkVersion>2.3.0</sdkVersion>
+	</storageModule>
+</cproject>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <components>
+    <component name="middleware.freertos" type="OS" version="8.2.3" requires="middleware.template_application.freertos">
+      <source path="./License">
+        <files mask="*.txt"/>
+      </source>
+      <source path="./Source">
+        <files mask="*.c"/>
+        <files mask="*.txt"/>
+      </source>
+      <source path="./Source/include">
+        <files mask="*.h"/>
+        <files mask="*.readme"/>
+      </source>
+      <source path="./Source/portable">
+        <files mask="*.txt"/>
+      </source>
+      <source path="./Source/portable/GCC/ARM_CM0" requires="compilers.gcc devices.core.Cortex-M0P">
+        <files mask="*.c"/>
+        <files mask="*.h"/>
+      </source>
+      <source path="./Source/portable/GCC/ARM_CM3" requires="compilers.gcc devices.core.Cortex-M4">
+        <files mask="*.c"/>
+        <files mask="*.h"/>
+      </source>
+      <source path="./Source/portable/GCC/ARM_CM4F" requires="compilers.gcc devices.core.Cortex-M4F">
+        <files mask="*.c"/>
+        <files mask="*.h"/>
+      </source>
+      <source path="./Source/portable/IAR/ARM_CM0" requires="compilers.iar devices.core.Cortex-M0P">
+        <files mask="*.c"/>
+        <files mask="*.s"/>
+        <files mask="*.h"/>
+      </source>
+      <source path="./Source/portable/IAR/ARM_CM3" requires="compilers.iar devices.core.Cortex-M4">
+        <files mask="*.c"/>
+        <files mask="*.s"/>
+        <files mask="*.h"/>
+      </source>
+      <source path="./Source/portable/IAR/ARM_CM4F" requires="compilers.iar devices.core.Cortex-M4F">
+        <files mask="*.c"/>
+        <files mask="*.s"/>
+        <files mask="*.h"/>
+      </source>
+      <source path="./Source/portable/Keil" requires="compilers.arm">
+        <files mask="*.txt"/>
+      </source>
+      <source path="./Source/portable/MemMang">
+        <files mask="*.c"/>
+      </source>
+      <source path="./Source/portable/RVDS/ARM_CM0" requires="compilers.arm devices.core.Cortex-M0P">
+        <files mask="*.c"/>
+        <files mask="*.h"/>
+      </source>
+      <source path="./Source/portable/RVDS/ARM_CM3" requires="compilers.arm devices.core.Cortex-M4">
+        <files mask="*.c"/>
+        <files mask="*.h"/>
+      </source>
+      <source path="./Source/portable/RVDS/ARM_CM4F" requires="compilers.arm devices.core.Cortex-M4F">
+        <files mask="*.c"/>
+        <files mask="*.h"/>
+      </source>
+      <source path="./">
+        <files mask="*.meta"/>
+        <files mask="*.txt"/>
+      </source>
+    </component>
+    <component name="middleware.template_application.freertos" type="project_template" version="1.0.1">
+      <source path="./template_application">
+        <files mask="*.c"/>
+        <files mask="*.h"/>
+      </source>
+    </component>
+  </components>
+</metadata>

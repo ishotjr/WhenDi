@@ -1,0 +1,52 @@
+
+#ifndef ATMO_ABILITY_HANDLER_H
+#define ATMO_ABILITY_HANDLER_H
+
+#include "atmosphere_platform.h"
+#include "atmosphere_callbacks.h"
+
+#include "../atmo/core.h"
+
+#ifdef __cplusplus
+	extern "C"{
+#endif
+
+#define ATMO_ABILITY(ELEMENT, NAME) ATMO_ ## ELEMENT ## _ABILITY_  ## NAME
+
+void ATMO_AbilityHandler(unsigned int abilityHandleId, ATMO_Value_t *value);
+
+#define ATMO_EmbeddedNxpRpkUserButtons_ABILITY_trigger 0x1
+#define ATMO_EmbeddedNxpRpkUserButtons_ABILITY_setup 0x2
+#define ATMO_EmbeddedNxpRpkUserButtons_ABILITY_topRightPushed 0x3
+#define ATMO_EmbeddedNxpRpkUserButtons_ABILITY_bottomRightPushed 0x4
+#define ATMO_EmbeddedNxpRpkUserButtons_ABILITY_topLeftPushed 0x5
+#define ATMO_EmbeddedNxpRpkUserButtons_ABILITY_bottomLeftPushed 0x6
+#define ATMO_EmbeddedIconLinesDisplay_ABILITY_trigger 0x7
+#define ATMO_EmbeddedIconLinesDisplay_ABILITY_displayPage 0x8
+#define ATMO_EmbeddedIconLinesDisplay_ABILITY_onDisplayed 0x9
+#define ATMO_EmbeddedIconLinesDisplay_ABILITY_onLeave 0xa
+#define ATMO_EmbeddedIconLinesDisplay_ABILITY_setIconLabelAndColor 0xb
+#define ATMO_EmbeddedIconLinesDisplay_ABILITY_setIconLabel 0xc
+#define ATMO_EmbeddedIconLinesDisplay_ABILITY_setup 0xd
+#define ATMO_EmbeddedIconLinesDisplay_ABILITY_setLine1Text 0xe
+#define ATMO_EmbeddedIconLinesDisplay_ABILITY_setLine2Text 0xf
+#define ATMO_EmbeddedIconLinesDisplay_ABILITY_setLine3Text 0x10
+#define ATMO_EmbeddedIconLinesDisplay_ABILITY_setLine4Text 0x11
+#define ATMO_EmbeddedIconLinesDisplay_ABILITY_topRightButtonPressed 0x12
+#define ATMO_EmbeddedIconLinesDisplay_ABILITY_bottomRightButtonPressed 0x13
+#define ATMO_EmbeddedIconLinesDisplay_ABILITY_topLeftButtonPressed 0x14
+#define ATMO_EmbeddedIconLinesDisplay_ABILITY_bottomLeftButtonPressed 0x15
+#define ATMO_DS1307RealTimeClock_ABILITY_trigger 0x16
+#define ATMO_DS1307RealTimeClock_ABILITY_setup 0x17
+#define ATMO_DS1307RealTimeClock_ABILITY_startClock 0x18
+#define ATMO_DS1307RealTimeClock_ABILITY_stopClock 0x19
+#define ATMO_DS1307RealTimeClock_ABILITY_resetClock 0x1a
+#define ATMO_DS1307RealTimeClock_ABILITY_setDatetime 0x1b
+#define ATMO_DS1307RealTimeClock_ABILITY_getDatetime 0x1c
+#define ATMO_Interval_ABILITY_trigger 0x1d
+#define ATMO_Interval_ABILITY_setup 0x1e
+#define ATMO_Interval_ABILITY_interval 0x1f
+#ifdef __cplusplus
+}
+#endif
+#endif

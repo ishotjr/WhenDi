@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata>
+  <components>
+    <component name="platform.devices.MK64F12" requires="devices.MK64F12" provides="platform.devices.device" type="driver">
+      <source path="./">
+        <files mask="fsl_clock.c"/>
+        <files mask="fsl_clock.h"/>
+        <files mask="MK64F12.meta"/>
+        <files mask="MK64F12_device.meta"/>
+      </source>
+    </component>
+    <component name="platform.devices.MK64F12_debugger" type="debugger" requires="devices.MK64F12" provides="platform.devices.device platform.devices.MK64F12">
+      <source path="./">
+        <files mask="MK64F12.svd"/>
+      </source>
+    </component>
+    <component name="platform.devices.MK64F12_startup" type="startup" requires="devices.MK64F12" provides="platform.devices.device platform.devices.MK64F12">
+      <source path="./arm" requires="compilers.arm">
+        <files mask="startup_MK64F12.s"/>
+      </source>
+      <source path="./gcc" requires="compilers.gcc">
+        <files mask="startup_MK64F12.S"/>
+      </source>
+      <source path="./iar" requires="compilers.iar">
+        <files mask="startup_MK64F12.s"/>
+      </source>
+      <source path="./">
+        <files mask="system_MK64F12.c"/>
+        <files mask="system_MK64F12.h"/>
+      </source>
+    </component>
+    <component name="platform.devices.MK64F12_linker" type="linker" requires="devices.MK64F12" provides="platform.devices.device platform.devices.MK64F12">
+      <source path="./arm" requires="compilers.arm">
+        <files mask="MK64FN1M0xxx12_flash.scf"/>
+        <files mask="MK64FN1M0xxx12_ram.scf"/>
+        <files mask="MK64FX512xxx12_flash.scf"/>
+        <files mask="MK64FX512xxx12_ram.scf"/>
+      </source>
+      <source path="./gcc" requires="compilers.gcc">
+        <files mask="MK64FN1M0xxx12_flash.ld"/>
+        <files mask="MK64FN1M0xxx12_ram.ld"/>
+        <files mask="MK64FX512xxx12_flash.ld"/>
+        <files mask="MK64FX512xxx12_ram.ld"/>
+      </source>
+      <source path="./iar" requires="compilers.iar">
+        <files mask="MK64FN1M0xxx12_flash.icf"/>
+        <files mask="MK64FN1M0xxx12_ram.icf"/>
+        <files mask="MK64FX512xxx12_flash.icf"/>
+        <files mask="MK64FX512xxx12_ram.icf"/>
+      </source>
+    </component>
+    <component name="platform.devices.MK64F12_CMSIS" type="CMSIS" requires="devices.MK64F12" provides="platform.devices.device platform.devices.MK64F12">
+      <source path="./">
+        <files mask="fsl_device_registers.h"/>
+        <files mask="MK64F12.h"/>
+        <files mask="MK64F12_features.h"/>
+      </source>
+    </component>
+  </components>
+  <toolchains>
+    <toolchain compiler="gcc" ids="ilg.gnuarmeclipse.managedbuild.cross.toolchain.elf.debug" name="gcc" user_name="Cross ARM GCC" requires="devices.MK64F12">
+      <option id="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.family" type="enum" user_name="ARM family" variants="NpwNonPe">
+        <value>ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.mcpu.cortex-m4</value>
+      </option>
+      <option id="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.fpu.abi" type="enum" user_name="Float ABI" variants="NpwNonPe">
+        <value>ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.fpu.abi.hard</value>
+      </option>
+      <option id="ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.fpu.unit" type="enum" user_name="FPU Type" variants="NpwNonPe">
+        <value>ilg.gnuarmeclipse.managedbuild.cross.option.arm.target.fpu.unit.fpv4spd16</value>
+      </option>
+    </toolchain>
+  </toolchains>
+</metadata>

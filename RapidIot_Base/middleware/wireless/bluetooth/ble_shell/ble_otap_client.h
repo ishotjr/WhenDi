@@ -1,0 +1,104 @@
+/*! *********************************************************************************
+ * \defgroup BLE OTAP Client ATT
+ * @{
+ ********************************************************************************** */
+/*!
+ * Copyright (c) 2015, Freescale Semiconductor, Inc.
+ * Copyright 2016-2017 NXP
+ *
+ * \file
+ *
+ * This file is the interface file for the BLE OTAP Client ATT application
+ *
+ * Redistribution and use in source and binary forms, with or without modification,
+ * are permitted provided that the following conditions are met:
+ *
+ * o Redistributions of source code must retain the above copyright notice, this list
+ *   of conditions and the following disclaimer.
+ *
+ * o Redistributions in binary form must reproduce the above copyright notice, this
+ *   list of conditions and the following disclaimer in the documentation and/or
+ *   other materials provided with the distribution.
+ *
+ * o Neither the name of Freescale Semiconductor, Inc. nor the names of its
+ *   contributors may be used to endorse or promote products derived from this
+ *   software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ * ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+#ifndef _BLE_OTAP_CLIENT_H_
+#define _BLE_OTAP_CLIENT_H_
+
+#include "ota_utils.h"
+
+/*************************************************************************************
+**************************************************************************************
+* Public macros
+**************************************************************************************
+*************************************************************************************/
+
+/* Profile Parameters */
+
+#define gReducedPowerMinAdvInterval_c   1600 /* 1 s */
+#define gReducedPowerMaxAdvInterval_c   4000 /* 2.5 s */
+
+/************************************************************************************
+*************************************************************************************
+* Public memory declarations
+*************************************************************************************
+********************************************************************************** */
+
+/************************************************************************************
+*************************************************************************************
+* Public prototypes
+*************************************************************************************
+************************************************************************************/
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+typedef void (*ota_downloadcomplete_cb)();
+
+#define OTAP_CLIENT_STATUS_STARTED (0)
+#define OTAP_CLIENT_STATUS_STOPPED (1)
+#define OTAP_CLIENT_STATUS_PROGRESS (2)
+#define OTAP_CLIENT_STATUS_ERROR (3)
+
+typedef struct {
+	uint32_t type;
+	uint32_t argument;
+} OtapClient_Status_t;
+
+typedef void (*ota_status_cb)(OtapClient_Status_t status);
+
+void BleApp_AttMtuChanged (deviceId_t deviceId, uint16_t negotiatedMtu);
+void BleApp_CccdWritten (deviceId_t deviceId, uint16_t handle);
+void BleApp_AttributeWritten (deviceId_t deviceId, uint16_t handle, uint16_t length, uint8_t* pValue);
+void BleApp_AttributeWrittenWithoutResponse (deviceId_t deviceId, uint16_t handle, uint16_t length, uint8_t* pValue);
+void BleApp_HandleValueConfirmation (deviceId_t deviceId);
+void OtapClient_HandleConnectionEvent (deviceId_t deviceId);
+void OtapClient_HandleDisconnectionEvent (deviceId_t deviceId);
+void OtapClient_RegisterCbImageDownloadComplete(ota_downloadcomplete_cb cb);
+void OtapClient_RegisterOtapStatusCallback(ota_status_cb cb);
+
+#ifdef __cplusplus
+}
+#endif
+
+
+#endif /* _BLE_OTAP_CLIENT_H_ */
+
+/*! *********************************************************************************
+ * @}
+ ********************************************************************************** */

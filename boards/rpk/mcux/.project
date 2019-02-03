@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>WhenDi</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+			<triggers>clean,full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.ScannerConfigBuilder</name>
+			<triggers>full,incremental,</triggers>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+		<nature>com.nxp.mcuxpresso.core.datamodels.sdkNature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
+	</natures>
+	<linkedResources>
+	<link>
+<name>adc</name>
+<type>2</type>
+<locationURI>copy_PARENT/adc</locationURI>
+</link>
+<link>
+<name>app_src</name>
+<type>2</type>
+<locationURI>copy_PARENT/app_src</locationURI>
+</link>
+<link>
+<name>atmo</name>
+<type>2</type>
+<locationURI>copy_PARENT/atmo</locationURI>
+</link>
+<link>
+<name>auth</name>
+<type>2</type>
+<locationURI>copy_PARENT/auth</locationURI>
+</link>
+<link>
+<name>battery</name>
+<type>2</type>
+<locationURI>copy_PARENT/battery</locationURI>
+</link>
+<link>
+<name>ble</name>
+<type>2</type>
+<locationURI>copy_PARENT/ble</locationURI>
+</link>
+<link>
+<name>block</name>
+<type>2</type>
+<locationURI>copy_PARENT/block</locationURI>
+</link>
+<link>
+<name>board</name>
+<type>2</type>
+<locationURI>copy_PARENT/board</locationURI>
+</link>
+<link>
+<name>buzzer</name>
+<type>2</type>
+<locationURI>copy_PARENT/buzzer</locationURI>
+</link>
+<link>
+<name>ccs811</name>
+<type>2</type>
+<locationURI>copy_PARENT/ccs811</locationURI>
+</link>
+<link>
+<name>cloud</name>
+<type>2</type>
+<locationURI>copy_PARENT/cloud</locationURI>
+</link>
+<link>
+<name>datetime</name>
+<type>2</type>
+<locationURI>copy_PARENT/datetime</locationURI>
+</link>
+<link>
+<name>ds1307</name>
+<type>2</type>
+<locationURI>copy_PARENT/ds1307</locationURI>
+</link>
+<link>
+<name>emWin</name>
+<type>2</type>
+<locationURI>copy_PARENT/emWin</locationURI>
+</link>
+<link>
+<name>ens210</name>
+<type>2</type>
+<locationURI>copy_PARENT/ens210</locationURI>
+</link>
+<link>
+<name>filesystem</name>
+<type>2</type>
+<locationURI>copy_PARENT/filesystem</locationURI>
+</link>
+<link>
+<name>fxas21002</name>
+<type>2</type>
+<locationURI>copy_PARENT/fxas21002</locationURI>
+</link>
+<link>
+<name>fxos8700</name>
+<type>2</type>
+<locationURI>copy_PARENT/fxos8700</locationURI>
+</link>
+<link>
+<name>gpio</name>
+<type>2</type>
+<locationURI>copy_PARENT/gpio</locationURI>
+</link>
+<link>
+<name>http</name>
+<type>2</type>
+<locationURI>copy_PARENT/http</locationURI>
+</link>
+<link>
+<name>i2c</name>
+<type>2</type>
+<locationURI>copy_PARENT/i2c</locationURI>
+</link>
+<link>
+<name>interval</name>
+<type>2</type>
+<locationURI>copy_PARENT/interval</locationURI>
+</link>
+<link>
+<name>lib</name>
+<type>2</type>
+<locationURI>copy_PARENT/lib</locationURI>
+</link>
+<link>
+<name>mpl3115</name>
+<type>2</type>
+<locationURI>copy_PARENT/mpl3115</locationURI>
+</link>
+<link>
+<name>nfc</name>
+<type>2</type>
+<locationURI>copy_PARENT/nfc</locationURI>
+</link>
+<link>
+<name>pwm</name>
+<type>2</type>
+<locationURI>copy_PARENT/pwm</locationURI>
+</link>
+<link>
+<name>ringbuffer</name>
+<type>2</type>
+<locationURI>copy_PARENT/ringbuffer</locationURI>
+</link>
+<link>
+<name>spi</name>
+<type>2</type>
+<locationURI>copy_PARENT/spi</locationURI>
+</link>
+<link>
+<name>sx9500</name>
+<type>2</type>
+<locationURI>copy_PARENT/sx9500</locationURI>
+</link>
+<link>
+<name>thread</name>
+<type>2</type>
+<locationURI>copy_PARENT/thread</locationURI>
+</link>
+<link>
+<name>tsl2572</name>
+<type>2</type>
+<locationURI>copy_PARENT/tsl2572</locationURI>
+</link>
+<link>
+<name>uart</name>
+<type>2</type>
+<locationURI>copy_PARENT/uart</locationURI>
+</link>
+<link>
+<name>ui_template</name>
+<type>2</type>
+<locationURI>copy_PARENT/ui_template</locationURI>
+</link>
+<link>
+<name>user_buttons</name>
+<type>2</type>
+<locationURI>copy_PARENT/user_buttons</locationURI>
+</link>
+<link>
+<name>wifi</name>
+<type>2</type>
+<locationURI>copy_PARENT/wifi</locationURI>
+</link>
+<link>
+<name>RapidIot_Base</name>
+<type>2</type>
+<locationURI>copy_PARENT/RapidIot_Base</locationURI>
+</link>
+
+	</linkedResources>
+	<variableList>
+		<variable>
+			<name>copy_PARENT</name>
+			<value>$%7BPARENT-3-PROJECT_LOC%7D</value>
+		</variable>
+	</variableList>
+</projectDescription>

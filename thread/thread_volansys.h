@@ -1,0 +1,43 @@
+#ifndef __ATMO_THREAD_VOLANSYS_H_
+#define __ATMO_THREAD_VOLANSYS_H_
+
+#include "atmosphere_platform.h"
+
+typedef enum {
+	ATMO_THREAD_VOLANSYS_Status_Success,
+	ATMO_THREAD_VOLANSYS_Status_Fail
+} ATMO_THREAD_VOLANSYS_Status_t;
+
+typedef void (*ThreadOtaCompleteCb_t)();
+
+ATMO_THREAD_VOLANSYS_Status_t ATMO_THREAD_VOLANSYS_Init();
+ATMO_THREAD_VOLANSYS_Status_t ATMO_THREAD_VOLANSYS_SetTemperature(float temperatureC);
+ATMO_THREAD_VOLANSYS_Status_t ATMO_THREAD_VOLANSYS_SetHumidity(float humidity);
+ATMO_THREAD_VOLANSYS_Status_t ATMO_THREAD_VOLANSYS_SetAmbientLight(uint32_t ambientLight);
+ATMO_THREAD_VOLANSYS_Status_t ATMO_THREAD_VOLANSYS_SetPressure(uint32_t pressureHpa);
+ATMO_THREAD_VOLANSYS_Status_t ATMO_THREAD_VOLANSYS_SetAirQualityTvoc(uint32_t airQuality);
+ATMO_THREAD_VOLANSYS_Status_t ATMO_THREAD_VOLANSYS_SetAirQualityCO2(uint32_t airQuality);
+
+ATMO_THREAD_VOLANSYS_Status_t ATMO_THREAD_VOLANSYS_SetRotspeedX(float value);
+ATMO_THREAD_VOLANSYS_Status_t ATMO_THREAD_VOLANSYS_SetRotspeedY(float value);
+ATMO_THREAD_VOLANSYS_Status_t ATMO_THREAD_VOLANSYS_SetRotspeedZ(float value);
+
+ATMO_THREAD_VOLANSYS_Status_t ATMO_THREAD_VOLANSYS_SetAccelX(float value);
+ATMO_THREAD_VOLANSYS_Status_t ATMO_THREAD_VOLANSYS_SetAccelY(float value);
+ATMO_THREAD_VOLANSYS_Status_t ATMO_THREAD_VOLANSYS_SetAccelZ(float value);
+
+ATMO_THREAD_VOLANSYS_Status_t ATMO_THREAD_VOLANSYS_SetMagX(float value);
+ATMO_THREAD_VOLANSYS_Status_t ATMO_THREAD_VOLANSYS_SetMagY(float value);
+ATMO_THREAD_VOLANSYS_Status_t ATMO_THREAD_VOLANSYS_SetMagZ(float value);
+
+ATMO_THREAD_VOLANSYS_Status_t ATMO_THREAD_VOLANSYS_TryJoin();
+ATMO_THREAD_VOLANSYS_Status_t ATMO_THREAD_VOLANSYS_RegisterCallbackConnected(ATMO_Callback_t cb);
+ATMO_THREAD_VOLANSYS_Status_t ATMO_THREAD_VOLANSYS_RegisterCallbackDisconnected(ATMO_Callback_t cb);
+void ATMO_THREAD_VOLANSYS_SetEnabled(bool enabled);
+void ATMO_THREAD_VOLANSYS_GetEnabled(bool *enabled);
+void THCI_RxCb(void *pData,void *param, uint32_t interfaceId);
+void ATMO_THREAD_VOLANSYS_RegisterOtaCompleteCb(ThreadOtaCompleteCb_t cb);
+// ATMO_THREAD_VOLANSYS_Status_t ATMO_THREAD_VOLANSYS_RegisterBacklightReceivedAbilityHandle(unsigned int abilityHandle);
+// ATMO_THREAD_VOLANSYS_Status_t ATMO_THREAD_VOLANSYS_RegisterRgbLedReceivedAbilityHandle(unsigned int abilityHandle);
+// ATMO_THREAD_VOLANSYS_Status_t ATMO_THREAD_VOLANSYS_RegisterBuzzerReceivedAbilityHandle(unsigned int abilityHandle);
+#endif

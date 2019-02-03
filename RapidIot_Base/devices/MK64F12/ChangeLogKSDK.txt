@@ -1,0 +1,21 @@
+/*!
+@page driver_log Driver Change Log
+
+@section clock CLOCK
+  Current CLOCK driver version is 2.2.0
+
+  - 2.0.0
+    - Initial version.
+
+  - 2.1.0
+    - Other Changes:
+        - Merge fsl_mcg and fsl_osc into fsl_clock.
+
+  - 2.2.0
+    - New Features:
+      - [KPSDK-9157] Update CLOCK_SetFeiMode/CLOCK_SetFbiMode/CLOCK_BootToFeiMode()
+        to support set MCG_C4[DMX32]=1 in FEI/FBI modes.
+    - Bug Fix:
+      - Update IP_CLOCKS array, remove unused gates and add missing gates.
+
+*/
