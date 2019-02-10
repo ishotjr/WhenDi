@@ -36,16 +36,10 @@ void ATMO_AbilityHandler(unsigned int abilityHandleId, ATMO_Value_t *value);
 #define ATMO_EmbeddedIconLinesDisplay_ABILITY_bottomRightButtonPressed 0x13
 #define ATMO_EmbeddedIconLinesDisplay_ABILITY_topLeftButtonPressed 0x14
 #define ATMO_EmbeddedIconLinesDisplay_ABILITY_bottomLeftButtonPressed 0x15
-#define ATMO_DS1307RealTimeClock_ABILITY_trigger 0x16
-#define ATMO_DS1307RealTimeClock_ABILITY_setup 0x17
-#define ATMO_DS1307RealTimeClock_ABILITY_startClock 0x18
-#define ATMO_DS1307RealTimeClock_ABILITY_stopClock 0x19
-#define ATMO_DS1307RealTimeClock_ABILITY_resetClock 0x1a
-#define ATMO_DS1307RealTimeClock_ABILITY_setDatetime 0x1b
-#define ATMO_DS1307RealTimeClock_ABILITY_getDatetime 0x1c
-#define ATMO_Interval_ABILITY_trigger 0x1d
-#define ATMO_Interval_ABILITY_setup 0x1e
-#define ATMO_Interval_ABILITY_interval 0x1f
+#define ATMO_Interval_ABILITY_trigger 0x16
+#define ATMO_Interval_ABILITY_setup 0x17
+#define ATMO_Interval_ABILITY_interval 0x18
+#define ATMO_GetDateTime_ABILITY_trigger 0x19
 #ifdef __cplusplus
 }
 #endif

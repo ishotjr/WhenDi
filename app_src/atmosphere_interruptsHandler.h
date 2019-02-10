@@ -32,17 +32,11 @@ void ATMO_EmbeddedIconLinesDisplay_INTERRUPT_bottomRightButtonPressed();
 void ATMO_EmbeddedIconLinesDisplay_INTERRUPT_topLeftButtonPressed();
 void ATMO_EmbeddedIconLinesDisplay_INTERRUPT_bottomLeftButtonPressed();
 
-void ATMO_DS1307RealTimeClock_INTERRUPT_trigger();
-void ATMO_DS1307RealTimeClock_INTERRUPT_setup();
-void ATMO_DS1307RealTimeClock_INTERRUPT_startClock();
-void ATMO_DS1307RealTimeClock_INTERRUPT_stopClock();
-void ATMO_DS1307RealTimeClock_INTERRUPT_resetClock();
-void ATMO_DS1307RealTimeClock_INTERRUPT_setDatetime();
-void ATMO_DS1307RealTimeClock_INTERRUPT_getDatetime();
-
 void ATMO_Interval_INTERRUPT_trigger();
 void ATMO_Interval_INTERRUPT_setup();
 void ATMO_Interval_INTERRUPT_interval();
+
+void ATMO_GetDateTime_INTERRUPT_trigger();
 
 
 #ifdef __cplusplus

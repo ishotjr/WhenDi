@@ -32,7 +32,7 @@ static ATMO_DriverInstanceHandle_t numberOfPageDriverInstance = 0;
 
 static unsigned int currentDisplayedPage = 0;
 
-static ATMO_UI_PAGE_Config_t *pageConfigs[ATMO_UI_MAX_NUM_PAGES] = {NULL};
+static ATMO_UI_PAGE_Config_t pageConfigs[ATMO_UI_MAX_NUM_PAGES];
 static ATMO_UI_Page_DriverInstance_t pages[ATMO_UI_MAX_NUM_PAGES];
 static ATMO_DriverInstanceData_t pageInstanceData[ATMO_UI_MAX_NUM_PAGES];
 
@@ -92,6 +92,8 @@ ATMO_Status_t ATMO_UI_Page_PostInit()
 
 ATMO_Status_t ATMO_UI_Page_AddPage(const ATMO_UI_Page_DriverInstance_t *driverInstance, ATMO_DriverInstanceData_t *driverInstanceData, ATMO_DriverInstanceHandle_t *instanceNumber)
 {
+	ATMO_PLATFORM_DebugPrint("Adding Page: %d\r\n", currentNumPages);
+
 	ATMO_UI_PAGE_Config_t *config = (ATMO_UI_PAGE_Config_t *)driverInstanceData->argument;
 
 	if(currentNumPages < ATMO_UI_MAX_NUM_PAGES)
@@ -279,7 +281,7 @@ static unsigned int ATMO_UI_Page_GetNextPageUp()
 		}
 	}
 
-	if(pageConfigs[lowestIndex]->hidden)
+	if(pageConfigs[lowestIndex].hidden)
 	{
 		return currentDisplayedPage;
 	}
@@ -353,7 +355,7 @@ static unsigned int ATMO_UI_Page_GetNextPageDown()
 		}
 	}
 
-	if(pageConfigs[lowestIndex]->hidden)
+	if(pageConfigs[lowestIndex].hidden)
 	{
 		return currentDisplayedPage;
 	}
@@ -428,7 +430,7 @@ static unsigned int ATMO_UI_Page_GetNextPageLeft()
 		}
 	}
 
-	if(pageConfigs[lowestIndex]->hidden)
+	if(pageConfigs[lowestIndex].hidden)
 	{
 		return currentDisplayedPage;
 	}
@@ -503,7 +505,7 @@ static unsigned int ATMO_UI_Page_GetNextPageRight()
 		}
 	}
 
-	if(pageConfigs[lowestIndex]->hidden)
+	if(pageConfigs[lowestIndex].hidden)
 	{
 		return currentDisplayedPage;
 	}
@@ -778,7 +780,7 @@ ATMO_Status_t ATMO_UI_Page_ProcessNavButton(ATMO_UI_PAGE_NAV_t nav)
 		}
 	}
 
-	if(nextIndex == currentDisplayedPage || pageConfigs[nextIndex]->hidden)
+	if(nextIndex == currentDisplayedPage || pageConfigs[nextIndex].hidden)
 	{
 		return ATMO_Status_Success;
 	}
@@ -905,13 +907,7 @@ bool ATMO_UI_Page_GetInitComplete()
 
 ATMO_UI_PAGE_Config_t *ATMO_UI_Page_GetConfigStruct()
 {
-	if(pageConfigs[currentNumPages] == NULL)
-	{
-		// Use regular malloc here
-		// This stuff will never be freed, so it's a waste of the static MemManager pool to just hold onto memory without ever releasing it
-		pageConfigs[currentNumPages] = malloc(sizeof(ATMO_UI_PAGE_Config_t));
-	}
-	return pageConfigs[currentNumPages];
+	return &pageConfigs[currentNumPages];
 }
 
 ATMO_UI_Page_DriverInstance_t *ATMO_UI_Page_GetDriverStruct()

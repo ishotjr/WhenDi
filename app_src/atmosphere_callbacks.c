@@ -9,6 +9,13 @@ static int s_wakes = 0;
 
 void ATMO_Setup() {
 
+    // set RTC (since RIoT has no battery)
+    
+    // TODO: replace hard-coded with sync via app
+	unsigned int syncTime = 1555344000;
+	ATMO_PLATFORM_DebugPrint("RX Time: %d\r\n", syncTime);
+	ATMO_DateTime_SetDateTimeEpoch(0, syncTime);
+	return ATMO_Status_Success;
 }
 
 
@@ -261,74 +268,6 @@ ATMO_Status_t EmbeddedIconLinesDisplay_bottomLeftButtonPressed(ATMO_Value_t *in,
 }
 
 
-ATMO_Status_t DS1307RealTimeClock_trigger(ATMO_Value_t *in, ATMO_Value_t *out) {
-	return ATMO_Status_Success;
-}
-
-
-ATMO_Status_t DS1307RealTimeClock_setup(ATMO_Value_t *in, ATMO_Value_t *out) {
-	DS1307_SetSQWOutput(ATMO_PROPERTY(DS1307RealTimeClock, i2cInstance), ATMO_PROPERTY(DS1307RealTimeClock, i2cAddress), ATMO_PROPERTY(DS1307RealTimeClock, sqwFrequency));
-	
-	#if ATMO_PROPERTY(DS1307RealTimeClock, startClockOnSetup) == true
-		DS1307_StartClock(ATMO_PROPERTY(DS1307RealTimeClock, i2cInstance), ATMO_PROPERTY(DS1307RealTimeClock, i2cAddress));
-	#else
-		DS1307_StopClock(ATMO_PROPERTY(DS1307RealTimeClock, i2cInstance), ATMO_PROPERTY(DS1307RealTimeClock, i2cAddress));
-	#endif
-	
-	return ATMO_Status_Success;
-
-}
-
-
-ATMO_Status_t DS1307RealTimeClock_startClock(ATMO_Value_t *in, ATMO_Value_t *out) {
-	DS1307_StartClock(ATMO_PROPERTY(DS1307RealTimeClock, i2cInstance), ATMO_PROPERTY(DS1307RealTimeClock, i2cAddress));
-
-	return ATMO_Status_Success;
-
-}
-
-
-ATMO_Status_t DS1307RealTimeClock_stopClock(ATMO_Value_t *in, ATMO_Value_t *out) {
-	DS1307_StopClock(ATMO_PROPERTY(DS1307RealTimeClock, i2cInstance), ATMO_PROPERTY(DS1307RealTimeClock, i2cAddress));
-
-	return ATMO_Status_Success;
-
-}
-
-
-ATMO_Status_t DS1307RealTimeClock_resetClock(ATMO_Value_t *in, ATMO_Value_t *out) {
-	DS1307_ResetClock(ATMO_PROPERTY(DS1307RealTimeClock, i2cInstance), ATMO_PROPERTY(DS1307RealTimeClock, i2cAddress));
-
-	return ATMO_Status_Success;
-
-}
-
-
-ATMO_Status_t DS1307RealTimeClock_setDatetime(ATMO_Value_t *in, ATMO_Value_t *out) {
-
-	char timeISOString[32];
-	
-	ATMO_GetString(in, timeISOString, 32);
-
-	DS1307_SetISO8601Time(ATMO_PROPERTY(DS1307RealTimeClock, i2cInstance), ATMO_PROPERTY(DS1307RealTimeClock, i2cAddress), timeISOString);
-	
-	return ATMO_Status_Success;
-
-}
-
-
-ATMO_Status_t DS1307RealTimeClock_getDatetime(ATMO_Value_t *in, ATMO_Value_t *out) {
-	char timeISOString[32];
-	
-	DS1307_GetISO8601Time(ATMO_PROPERTY(DS1307RealTimeClock, i2cInstance), ATMO_PROPERTY(DS1307RealTimeClock, i2cAddress), timeISOString);
-
-	ATMO_CreateValueString(out, timeISOString);
-	
-	return ATMO_Status_Success;
-
-}
-
-
 ATMO_Status_t Interval_trigger(ATMO_Value_t *in, ATMO_Value_t *out) {
 	return ATMO_Status_Success;
 }
@@ -350,6 +289,40 @@ ATMO_Status_t Interval_setup(ATMO_Value_t *in, ATMO_Value_t *out) {
 
 
 ATMO_Status_t Interval_interval(ATMO_Value_t *in, ATMO_Value_t *out) {
+	return ATMO_Status_Success;
+}
+
+
+ATMO_Status_t GetDateTime_trigger(ATMO_Value_t *in, ATMO_Value_t *out) {
+	
+	// output DateTime based on RTC
+	unsigned int bufferSize = 10;
+	char dateTimeStr[bufferSize];
+	// ATMO_DateTime_GetDateTimeIsoStr(0, dateTimeStr, sizeof(dateTimeStr));
+
+	ATMO_DateTime_Time_t now;
+    ATMO_DateTime_GetDateTime(0, &now);
+	snprintf(dateTimeStr, bufferSize, "   %02d:%02d", now.hours, now.minutes);
+	                                // ^^^ extra padding as workaround for icon drawing bug
+    
+    /*
+    // huh: turns out strftime() works too!?
+    time_t temp = time(NULL);
+    struct tm *now = localtime(&temp);
+    strftime(dateTimeStr, bufferSize, "   %H:%M", now);
+    */
+    /*
+    time_t temp;
+    struct tm *now;
+    
+    time(&temp);
+    now = localtime(&temp);
+    
+    strftime(dateTimeStr, bufferSize, "   %H:%M", now);    
+    */
+    
+	ATMO_CreateValueString(out, dateTimeStr);
+	
 	return ATMO_Status_Success;
 }
 

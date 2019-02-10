@@ -187,68 +187,6 @@ void ATMO_AbilityHandler(unsigned int abilityHandleId, ATMO_Value_t *value) {
 			ATMO_FreeValue(&EmbeddedIconLinesDisplay_Value);
 			break;
 		}
-		case ATMO_ABILITY(DS1307RealTimeClock, trigger):
-		{
-			ATMO_Value_t DS1307RealTimeClock_Value;
-			ATMO_InitValue(&DS1307RealTimeClock_Value);
-			DS1307RealTimeClock_trigger(value, &DS1307RealTimeClock_Value);
-			ATMO_TriggerHandler(ATMO_TRIGGER(DS1307RealTimeClock, triggered), &DS1307RealTimeClock_Value);
-			ATMO_FreeValue(&DS1307RealTimeClock_Value);
-			break;
-		}
-		case ATMO_ABILITY(DS1307RealTimeClock, setup):
-		{
-			ATMO_Value_t DS1307RealTimeClock_Value;
-			ATMO_InitValue(&DS1307RealTimeClock_Value);
-			DS1307RealTimeClock_setup(value, &DS1307RealTimeClock_Value);
-			ATMO_FreeValue(&DS1307RealTimeClock_Value);
-			break;
-		}
-		case ATMO_ABILITY(DS1307RealTimeClock, startClock):
-		{
-			ATMO_Value_t DS1307RealTimeClock_Value;
-			ATMO_InitValue(&DS1307RealTimeClock_Value);
-			DS1307RealTimeClock_startClock(value, &DS1307RealTimeClock_Value);
-			ATMO_TriggerHandler(ATMO_TRIGGER(DS1307RealTimeClock, clockStarted), &DS1307RealTimeClock_Value);
-			ATMO_FreeValue(&DS1307RealTimeClock_Value);
-			break;
-		}
-		case ATMO_ABILITY(DS1307RealTimeClock, stopClock):
-		{
-			ATMO_Value_t DS1307RealTimeClock_Value;
-			ATMO_InitValue(&DS1307RealTimeClock_Value);
-			DS1307RealTimeClock_stopClock(value, &DS1307RealTimeClock_Value);
-			ATMO_TriggerHandler(ATMO_TRIGGER(DS1307RealTimeClock, clockStopped), &DS1307RealTimeClock_Value);
-			ATMO_FreeValue(&DS1307RealTimeClock_Value);
-			break;
-		}
-		case ATMO_ABILITY(DS1307RealTimeClock, resetClock):
-		{
-			ATMO_Value_t DS1307RealTimeClock_Value;
-			ATMO_InitValue(&DS1307RealTimeClock_Value);
-			DS1307RealTimeClock_resetClock(value, &DS1307RealTimeClock_Value);
-			ATMO_TriggerHandler(ATMO_TRIGGER(DS1307RealTimeClock, clockReset), &DS1307RealTimeClock_Value);
-			ATMO_FreeValue(&DS1307RealTimeClock_Value);
-			break;
-		}
-		case ATMO_ABILITY(DS1307RealTimeClock, setDatetime):
-		{
-			ATMO_Value_t DS1307RealTimeClock_Value;
-			ATMO_InitValue(&DS1307RealTimeClock_Value);
-			DS1307RealTimeClock_setDatetime(value, &DS1307RealTimeClock_Value);
-			ATMO_TriggerHandler(ATMO_TRIGGER(DS1307RealTimeClock, datetimeSet), &DS1307RealTimeClock_Value);
-			ATMO_FreeValue(&DS1307RealTimeClock_Value);
-			break;
-		}
-		case ATMO_ABILITY(DS1307RealTimeClock, getDatetime):
-		{
-			ATMO_Value_t DS1307RealTimeClock_Value;
-			ATMO_InitValue(&DS1307RealTimeClock_Value);
-			DS1307RealTimeClock_getDatetime(value, &DS1307RealTimeClock_Value);
-			ATMO_TriggerHandler(ATMO_TRIGGER(DS1307RealTimeClock, datetimeRetrieved), &DS1307RealTimeClock_Value);
-			ATMO_FreeValue(&DS1307RealTimeClock_Value);
-			break;
-		}
 		case ATMO_ABILITY(Interval, trigger):
 		{
 			ATMO_Value_t Interval_Value;
@@ -273,6 +211,15 @@ void ATMO_AbilityHandler(unsigned int abilityHandleId, ATMO_Value_t *value) {
 			Interval_interval(value, &Interval_Value);
 			ATMO_TriggerHandler(ATMO_TRIGGER(Interval, interval), &Interval_Value);
 			ATMO_FreeValue(&Interval_Value);
+			break;
+		}
+		case ATMO_ABILITY(GetDateTime, trigger):
+		{
+			ATMO_Value_t GetDateTime_Value;
+			ATMO_InitValue(&GetDateTime_Value);
+			GetDateTime_trigger(value, &GetDateTime_Value);
+			ATMO_TriggerHandler(ATMO_TRIGGER(GetDateTime, triggered), &GetDateTime_Value);
+			ATMO_FreeValue(&GetDateTime_Value);
 			break;
 		}
 	}

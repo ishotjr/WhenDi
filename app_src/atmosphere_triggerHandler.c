@@ -71,37 +71,6 @@ void ATMO_TriggerHandler(unsigned int triggerHandleId, ATMO_Value_t *value) {
 			break;
 		}
 
-		case ATMO_TRIGGER(DS1307RealTimeClock, triggered):
-		{
-			break;
-		}
-
-		case ATMO_TRIGGER(DS1307RealTimeClock, clockStarted):
-		{
-			break;
-		}
-
-		case ATMO_TRIGGER(DS1307RealTimeClock, clockStopped):
-		{
-			break;
-		}
-
-		case ATMO_TRIGGER(DS1307RealTimeClock, clockReset):
-		{
-			break;
-		}
-
-		case ATMO_TRIGGER(DS1307RealTimeClock, datetimeSet):
-		{
-			break;
-		}
-
-		case ATMO_TRIGGER(DS1307RealTimeClock, datetimeRetrieved):
-		{
-			ATMO_AbilityHandler(ATMO_ABILITY(EmbeddedIconLinesDisplay, setLine4Text), value);
-			break;
-		}
-
 		case ATMO_TRIGGER(Interval, triggered):
 		{
 			break;
@@ -109,7 +78,13 @@ void ATMO_TriggerHandler(unsigned int triggerHandleId, ATMO_Value_t *value) {
 
 		case ATMO_TRIGGER(Interval, interval):
 		{
-			ATMO_AbilityHandler(ATMO_ABILITY(DS1307RealTimeClock, getDatetime), value);
+			ATMO_AbilityHandler(ATMO_ABILITY(GetDateTime, trigger), value);
+			break;
+		}
+
+		case ATMO_TRIGGER(GetDateTime, triggered):
+		{
+			ATMO_AbilityHandler(ATMO_ABILITY(EmbeddedIconLinesDisplay, setIconLabel), value);
 			break;
 		}
 

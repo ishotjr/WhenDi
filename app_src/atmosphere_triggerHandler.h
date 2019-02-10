@@ -25,14 +25,9 @@ void ATMO_TriggerHandler(unsigned int triggerHandleId, ATMO_Value_t *value);
 #define ATMO_EmbeddedIconLinesDisplay_TRIGGER_bottomRightButtonPressed 0xa
 #define ATMO_EmbeddedIconLinesDisplay_TRIGGER_topLeftButtonPressed 0xb
 #define ATMO_EmbeddedIconLinesDisplay_TRIGGER_bottomLeftButtonPressed 0xc
-#define ATMO_DS1307RealTimeClock_TRIGGER_triggered 0xd
-#define ATMO_DS1307RealTimeClock_TRIGGER_clockStarted 0xe
-#define ATMO_DS1307RealTimeClock_TRIGGER_clockStopped 0xf
-#define ATMO_DS1307RealTimeClock_TRIGGER_clockReset 0x10
-#define ATMO_DS1307RealTimeClock_TRIGGER_datetimeSet 0x11
-#define ATMO_DS1307RealTimeClock_TRIGGER_datetimeRetrieved 0x12
-#define ATMO_Interval_TRIGGER_triggered 0x13
-#define ATMO_Interval_TRIGGER_interval 0x14
+#define ATMO_Interval_TRIGGER_triggered 0xd
+#define ATMO_Interval_TRIGGER_interval 0xe
+#define ATMO_GetDateTime_TRIGGER_triggered 0xf
 #ifdef __cplusplus
 }
 #endif

@@ -2,9 +2,10 @@
 #include "ble.h"
 #include "atmosphere_platform.h"
 
-#define ATMO_BLE_DB_MAX_CHARACTERISTICS (128)
-#define ATMO_BLE_DB_MAX_SERVICES (64)
-#define ATMO_BLE_DB_MAX_HANDLES (128)
+#define ATMO_BLE_DB_MAX_CHARACTERISTICS_PER_SERVICE (10)
+#define ATMO_BLE_DB_MAX_SERVICES (20)
+#define ATMO_BLE_DB_MAX_CHARACTERISTICS (ATMO_BLE_DB_MAX_CHARACTERISTICS_PER_SERVICE * ATMO_BLE_DB_MAX_SERVICES)
+#define ATMO_BLE_DB_MAX_HANDLES (ATMO_BLE_DB_MAX_CHARACTERISTICS + ATMO_BLE_DB_MAX_SERVICES)
 
 // Storage for characteristic information
 typedef struct
@@ -14,7 +15,7 @@ typedef struct
 	ATMO_BLE_Handle_t kw41zHandle; // Handle the kw41z uses
 	uint8_t properties;
 	uint8_t permissions;
-	uint32_t maxLen;
+	uint8_t maxLen;
 } ATMO_BLE_DB_Characteristic_t;
 
 typedef struct
@@ -22,8 +23,8 @@ typedef struct
 	ATMO_UUID_t uuid;
 	ATMO_BLE_Handle_t handle;
 	ATMO_BLE_Handle_t kw41zHandle; // Handle the kw41z uses
-	uint32_t numCharacteristics;
-	uint8_t characteristics[ATMO_BLE_DB_MAX_CHARACTERISTICS];
+	uint8_t numCharacteristics;
+	uint8_t characteristics[ATMO_BLE_DB_MAX_CHARACTERISTICS_PER_SERVICE];
 } ATMO_BLE_DB_Service_t;
 
 static AddService_t addServiceFunc = NULL;
@@ -128,6 +129,12 @@ bool ATMO_BLE_DB_MK64F_AddService( ATMO_UUID_t *uuid, ATMO_BLE_Handle_t *handle 
 		service = &services[currentNumServices];
 	}
 
+	if(currentNumServices >= ATMO_BLE_DB_MAX_SERVICES)
+	{
+		ATMO_PLATFORM_DebugPrint("ERROR: Unable to add service. Too many services. Limit: %d\r\n", ATMO_BLE_DB_MAX_SERVICES);
+		return false;
+	}
+
 	// Create new service
 	memcpy( &service->uuid, uuid, sizeof( ATMO_UUID_t ) );
 	service->handle = currentHandle++;
@@ -163,6 +170,14 @@ bool ATMO_BLE_DB_MK64F_AddCharacteristicToService( ATMO_BLE_Handle_t *serviceHan
 
 	// Save handle
 	*handle = characteristics[currentNumCharacteristics].handle;
+
+	ATMO_PLATFORM_DebugPrint("Adding Characteristic[%d] to Service %d\r\n", service->numCharacteristics, *serviceHandle);
+
+	if(service->numCharacteristics >= ATMO_BLE_DB_MAX_CHARACTERISTICS_PER_SERVICE)
+	{
+		ATMO_PLATFORM_DebugPrint("ERROR: Unable to add characteristic. Service can only have %d characteristics!!\r\n", ATMO_BLE_DB_MAX_CHARACTERISTICS_PER_SERVICE);
+		return false;
+	}
 
 	// Add characteristic to parent service
 	service->characteristics[service->numCharacteristics] = currentNumCharacteristics;

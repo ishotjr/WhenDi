@@ -15,13 +15,13 @@
 
 #include <stdio.h>
 
-#define MAX_NUM_PAGES (25)
+#define MAX_NUM_PAGES (20)
 #define MAX_CONTENT_LEN (64)
 
 // Each page can have up to MAX_NUM_MEASUREMENTS measurements on it
 typedef struct {
 	const GUI_FONT *font;
-	char* content;
+	char content[MAX_CONTENT_LEN];
 	unsigned int onDisplayAbilityHandle;
 	bool onDisplayAbilityHandleRegistered;
 	bool isDisplayed; // Is this page currently displayed?
@@ -95,6 +95,7 @@ bool ATMO_UI_STATICTEXT_Init(ATMO_UI_PAGE_Config_t *config)
 	pages[currentNumPages].isDisplayed = false;
 	pages[currentNumPages].alignment = GUI_TA_HCENTER;
 	pages[currentNumPages].hasTitle = (!config->titleHidden) && (config->title != NULL && strcmp(config->title,"") != 0);
+	pages[currentNumPages].content[0] = 0;
 
 	currentNumPages++;
 
@@ -137,17 +138,10 @@ bool ATMO_UI_STATICTEXT_SetText(uint32_t instance, const char* text)
 		return false;
 	}
 
-	if(pages[instance].content != NULL)
-	{
-		ATMO_Free(pages[instance].content);
-	}
-
 	if(strlen(text) > MAX_CONTENT_LEN)
 	{
 		return false;
 	}
-
-	pages[instance].content = ATMO_Malloc(strlen(text) + 1);
 
 	if(strncmp(pages[instance].content, text, MAX_CONTENT_LEN) != 0)
 	{

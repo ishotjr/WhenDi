@@ -58,23 +58,11 @@ ATMO_Status_t EmbeddedIconLinesDisplay_topLeftButtonPressed(ATMO_Value_t *in, AT
 
 ATMO_Status_t EmbeddedIconLinesDisplay_bottomLeftButtonPressed(ATMO_Value_t *in, ATMO_Value_t *out);
 
-ATMO_Status_t DS1307RealTimeClock_trigger(ATMO_Value_t *in, ATMO_Value_t *out);
-
-ATMO_Status_t DS1307RealTimeClock_setup(ATMO_Value_t *in, ATMO_Value_t *out);
-
-ATMO_Status_t DS1307RealTimeClock_startClock(ATMO_Value_t *in, ATMO_Value_t *out);
-
-ATMO_Status_t DS1307RealTimeClock_stopClock(ATMO_Value_t *in, ATMO_Value_t *out);
-
-ATMO_Status_t DS1307RealTimeClock_resetClock(ATMO_Value_t *in, ATMO_Value_t *out);
-
-ATMO_Status_t DS1307RealTimeClock_setDatetime(ATMO_Value_t *in, ATMO_Value_t *out);
-
-ATMO_Status_t DS1307RealTimeClock_getDatetime(ATMO_Value_t *in, ATMO_Value_t *out);
-
 ATMO_Status_t Interval_trigger(ATMO_Value_t *in, ATMO_Value_t *out);
 
 ATMO_Status_t Interval_setup(ATMO_Value_t *in, ATMO_Value_t *out);
 
 ATMO_Status_t Interval_interval(ATMO_Value_t *in, ATMO_Value_t *out);
+
+ATMO_Status_t GetDateTime_trigger(ATMO_Value_t *in, ATMO_Value_t *out);
 #endif

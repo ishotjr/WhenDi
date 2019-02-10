@@ -9,7 +9,6 @@ void ATMO_ElementSetup() {
 	ATMO_InitValue(&inOutValue);
 	EmbeddedNxpRpkUserButtons_setup(&inOutValue, &inOutValue);
 	EmbeddedIconLinesDisplay_setup(&inOutValue, &inOutValue);
-	DS1307RealTimeClock_setup(&inOutValue, &inOutValue);
 	Interval_setup(&inOutValue, &inOutValue);
 }
 

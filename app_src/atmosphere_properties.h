@@ -39,17 +39,13 @@
 #define ATMO_EmbeddedIconLinesDisplay_PROPERTY_line3Text ""
 #define ATMO_EmbeddedIconLinesDisplay_PROPERTY_line4Text ""
 
-#define ATMO_DS1307RealTimeClock_PROPERTY_errorData NULL
-#define ATMO_DS1307RealTimeClock_PROPERTY_codeUserChanged NULL
-#define ATMO_DS1307RealTimeClock_PROPERTY_i2cInstance ATMO_DRIVERINSTANCE_I2C_I2C1
-#define ATMO_DS1307RealTimeClock_PROPERTY_i2cAddress 0x68
-#define ATMO_DS1307RealTimeClock_PROPERTY_startClockOnSetup true
-#define ATMO_DS1307RealTimeClock_PROPERTY_sqwFrequency DS1307_SQW_OUT_PIN_FREQUENCY_1Hz
-
 #define ATMO_Interval_PROPERTY_errorData NULL
 #define ATMO_Interval_PROPERTY_codeUserChanged NULL
 #define ATMO_Interval_PROPERTY_instance ATMO_DRIVERINSTANCE_INTERVAL_INTERVAL1
 #define ATMO_Interval_PROPERTY_time 1000
+
+#define ATMO_GetDateTime_PROPERTY_errorData NULL
+#define ATMO_GetDateTime_PROPERTY_codeUserChanged NULL
 
 
 #ifdef __cplusplus

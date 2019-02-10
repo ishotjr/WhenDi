@@ -64,27 +64,6 @@ void ATMO_EmbeddedIconLinesDisplay_INTERRUPT_topLeftButtonPressed() {
 void ATMO_EmbeddedIconLinesDisplay_INTERRUPT_bottomLeftButtonPressed() {
 	ATMO_AddAbilityExecute(ATMO_ABILITY(EmbeddedIconLinesDisplay, bottomLeftButtonPressed), NULL);
 }
-void ATMO_DS1307RealTimeClock_INTERRUPT_trigger() {
-	ATMO_AddAbilityExecute(ATMO_ABILITY(DS1307RealTimeClock, trigger), NULL);
-}
-void ATMO_DS1307RealTimeClock_INTERRUPT_setup() {
-	ATMO_AddAbilityExecute(ATMO_ABILITY(DS1307RealTimeClock, setup), NULL);
-}
-void ATMO_DS1307RealTimeClock_INTERRUPT_startClock() {
-	ATMO_AddAbilityExecute(ATMO_ABILITY(DS1307RealTimeClock, startClock), NULL);
-}
-void ATMO_DS1307RealTimeClock_INTERRUPT_stopClock() {
-	ATMO_AddAbilityExecute(ATMO_ABILITY(DS1307RealTimeClock, stopClock), NULL);
-}
-void ATMO_DS1307RealTimeClock_INTERRUPT_resetClock() {
-	ATMO_AddAbilityExecute(ATMO_ABILITY(DS1307RealTimeClock, resetClock), NULL);
-}
-void ATMO_DS1307RealTimeClock_INTERRUPT_setDatetime() {
-	ATMO_AddAbilityExecute(ATMO_ABILITY(DS1307RealTimeClock, setDatetime), NULL);
-}
-void ATMO_DS1307RealTimeClock_INTERRUPT_getDatetime() {
-	ATMO_AddAbilityExecute(ATMO_ABILITY(DS1307RealTimeClock, getDatetime), NULL);
-}
 void ATMO_Interval_INTERRUPT_trigger() {
 	ATMO_AddAbilityExecute(ATMO_ABILITY(Interval, trigger), NULL);
 }
@@ -93,4 +72,7 @@ void ATMO_Interval_INTERRUPT_setup() {
 }
 void ATMO_Interval_INTERRUPT_interval() {
 	ATMO_AddAbilityExecute(ATMO_ABILITY(Interval, interval), NULL);
+}
+void ATMO_GetDateTime_INTERRUPT_trigger() {
+	ATMO_AddAbilityExecute(ATMO_ABILITY(GetDateTime, trigger), NULL);
 }
