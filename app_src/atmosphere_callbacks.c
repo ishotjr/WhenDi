@@ -55,6 +55,9 @@ ATMO_Status_t EmbeddedNxpRpkUserButtons_bottomRightPushed(ATMO_Value_t *in, ATMO
     
 	char str[32];
 	sprintf(str, "%d changes", s_changes);
+	
+    ATMO_PLATFORM_DebugPrint("%s\r\n", str);
+
 	ATMO_CreateValueString(out, str);
 	return ATMO_Status_Success;
     
@@ -82,189 +85,6 @@ ATMO_Status_t EmbeddedNxpRpkUserButtons_bottomLeftPushed(ATMO_Value_t *in, ATMO_
 	ATMO_CreateValueString(out, str);
 	return ATMO_Status_Success;
     
-}
-
-
-ATMO_Status_t EmbeddedIconLinesDisplay_trigger(ATMO_Value_t *in, ATMO_Value_t *out) {
-	return ATMO_Status_Success;
-}
-
-
-ATMO_Status_t EmbeddedIconLinesDisplay_displayPage(ATMO_Value_t *in, ATMO_Value_t *out) {
-
-	ATMO_UI_Page_DisplayPageByCoord(ATMO_PROPERTY(EmbeddedIconLinesDisplay, x), ATMO_PROPERTY(EmbeddedIconLinesDisplay, y), false);
-	return ATMO_Status_Success;
-	
-}
-
-
-ATMO_Status_t EmbeddedIconLinesDisplay_onDisplayed(ATMO_Value_t *in, ATMO_Value_t *out) {
-
-	return ATMO_Status_Success;
-    
-}
-
-
-ATMO_Status_t EmbeddedIconLinesDisplay_onLeave(ATMO_Value_t *in, ATMO_Value_t *out) {
-
-	return ATMO_Status_Success;
-	
-}
-
-
-ATMO_Status_t EmbeddedIconLinesDisplay_setIconLabelAndColor(ATMO_Value_t *in, ATMO_Value_t *out) {
-
-    struct {
-        char str[32];
-        GUI_COLOR color;
-    } icon_data;
- 
-    ATMO_GetBinary(in, &icon_data, sizeof(icon_data));
-    ATMO_UI_ICONLINES_SetIconLabelColor(ATMO_VARIABLE(EmbeddedIconLinesDisplay, pageHandle), icon_data.str, icon_data.color);
-    return ATMO_Status_Success;
-    
-}
-
-
-ATMO_Status_t EmbeddedIconLinesDisplay_setIconLabel(ATMO_Value_t *in, ATMO_Value_t *out) {
-
-    char str[32];
-    ATMO_GetString(in, str, 32);
-    ATMO_UI_ICONLINES_SetIconLabel(ATMO_VARIABLE(EmbeddedIconLinesDisplay, pageHandle), str);
-    return ATMO_Status_Success;
-    
-}
-
-
-ATMO_Status_t EmbeddedIconLinesDisplay_setup(ATMO_Value_t *in, ATMO_Value_t *out) {
-
-    ATMO_UI_PAGE_Config_t config;
-    config.hidden = ATMO_PROPERTY(EmbeddedIconLinesDisplay, pageHidden);
-    config.textColor = ATMO_PROPERTY(EmbeddedIconLinesDisplay, textColor);
-    config.activeButtons = ATMO_UI_Page_GetButtonMask(ATMO_PROPERTY(EmbeddedIconLinesDisplay, topRightButtonEnabled),
-    ATMO_PROPERTY(EmbeddedIconLinesDisplay,bottomRightButtonEnabled), ATMO_PROPERTY(EmbeddedIconLinesDisplay, topLeftButtonEnabled), ATMO_PROPERTY(EmbeddedIconLinesDisplay, bottomLeftButtonEnabled));
-	config.x = ATMO_PROPERTY(EmbeddedIconLinesDisplay, x);
-    config.y = ATMO_PROPERTY(EmbeddedIconLinesDisplay, y);
-	strncpy(config.topLeftButtonLabel, ATMO_PROPERTY(EmbeddedIconLinesDisplay, topLeftButtonLabel), ATMO_BUTTON_LABEL_MAXLEN);
-	strncpy(config.topRightButtonLabel, ATMO_PROPERTY(EmbeddedIconLinesDisplay, topRightButtonLabel), ATMO_BUTTON_LABEL_MAXLEN);
-	strncpy(config.bottomLeftButtonLabel, ATMO_PROPERTY(EmbeddedIconLinesDisplay, bottomLeftButtonLabel), ATMO_BUTTON_LABEL_MAXLEN);
-	strncpy(config.bottomRightButtonLabel, ATMO_PROPERTY(EmbeddedIconLinesDisplay, bottomRightButtonLabel), ATMO_BUTTON_LABEL_MAXLEN);
-    config.spanX = ATMO_PROPERTY(EmbeddedIconLinesDisplay, spanX);
-	config.spanY = ATMO_PROPERTY(EmbeddedIconLinesDisplay, spanY);
-    config.title = ATMO_PROPERTY(EmbeddedIconLinesDisplay, pageTitle);
-    config.titleHidden = ATMO_PROPERTY(EmbeddedIconLinesDisplay, titleHidden);
-	ATMO_UI_ICONLINES_Init(&config, ATMO_PROPERTY(EmbeddedIconLinesDisplay, numLines), false);
-	ATMO_VARIABLE(EmbeddedIconLinesDisplay, pageHandle) = config.templateInstance;
-    ATMO_UI_ICONLINES_SetMainText(config.templateInstance, 0, ATMO_PROPERTY(EmbeddedIconLinesDisplay, line1Text));
-    ATMO_UI_ICONLINES_SetMainText(config.templateInstance, 1, ATMO_PROPERTY(EmbeddedIconLinesDisplay, line2Text));
-    ATMO_UI_ICONLINES_SetMainText(config.templateInstance, 2, ATMO_PROPERTY(EmbeddedIconLinesDisplay, line3Text));
-    ATMO_UI_ICONLINES_SetMainText(config.templateInstance, 3, ATMO_PROPERTY(EmbeddedIconLinesDisplay, line4Text));
-    ATMO_UI_ICONLINES_SetIconLabel(config.templateInstance, ATMO_PROPERTY(EmbeddedIconLinesDisplay, iconLabel));
-    ATMO_UI_ICONLINES_RegisterButtonAbilityHandle(ATMO_VARIABLE(EmbeddedIconLinesDisplay,pageHandle), 1, ATMO_ABILITY(EmbeddedIconLinesDisplay, topRightButtonPressed));
-	ATMO_UI_ICONLINES_RegisterButtonAbilityHandle(ATMO_VARIABLE(EmbeddedIconLinesDisplay,pageHandle), 2, ATMO_ABILITY(EmbeddedIconLinesDisplay, bottomRightButtonPressed));
-	ATMO_UI_ICONLINES_RegisterButtonAbilityHandle(ATMO_VARIABLE(EmbeddedIconLinesDisplay,pageHandle), 3, ATMO_ABILITY(EmbeddedIconLinesDisplay, topLeftButtonPressed));
-    ATMO_UI_ICONLINES_RegisterButtonAbilityHandle(ATMO_VARIABLE(EmbeddedIconLinesDisplay,pageHandle), 4, ATMO_ABILITY(EmbeddedIconLinesDisplay, bottomLeftButtonPressed));
-    ATMO_UI_ICONLINES_SetIcon(config.templateInstance, ATMO_PROPERTY(EmbeddedIconLinesDisplay, icon));
-    ATMO_UI_ICONLINES_RegisterOnDisplayedAbilityHandle(ATMO_VARIABLE(EmbeddedIconLinesDisplay,pageHandle), ATMO_ABILITY(EmbeddedIconLinesDisplay, onDisplayed));
-    ATMO_UI_ICONLINES_RegisterOnLeaveAbilityHandle(config.templateInstance, ATMO_ABILITY(EmbeddedIconLinesDisplay, onLeave));
-    return ATMO_Status_Success;
-    
-}
-
-
-ATMO_Status_t EmbeddedIconLinesDisplay_setLine1Text(ATMO_Value_t *in, ATMO_Value_t *out) {
-
-    char label[32];
-    if(ATMO_GetString(in, label, 32) == ATMO_Status_Success)
-    {
-        ATMO_UI_ICONLINES_SetMainText(ATMO_VARIABLE(EmbeddedIconLinesDisplay,pageHandle), 0, label);
-    }
-    else
-    {
-        return ATMO_Status_Fail;
-    }
-
-    return ATMO_Status_Success;
-    
-}
-
-
-ATMO_Status_t EmbeddedIconLinesDisplay_setLine2Text(ATMO_Value_t *in, ATMO_Value_t *out) {
-
-    char label[32];
-    if(ATMO_GetString(in, label, 32) == ATMO_Status_Success)
-    {
-        ATMO_UI_ICONLINES_SetMainText(ATMO_VARIABLE(EmbeddedIconLinesDisplay,pageHandle), 1, label);
-    }
-    else
-    {
-        return ATMO_Status_Fail;
-    }
-
-    return ATMO_Status_Success;
-    
-}
-
-
-ATMO_Status_t EmbeddedIconLinesDisplay_setLine3Text(ATMO_Value_t *in, ATMO_Value_t *out) {
-
-    char label[32];
-    if(ATMO_GetString(in, label, 32) == ATMO_Status_Success)
-    {
-        ATMO_UI_ICONLINES_SetMainText(ATMO_VARIABLE(EmbeddedIconLinesDisplay,pageHandle), 2, label);
-    }
-    else
-    {
-        return ATMO_Status_Fail;
-    }
-
-    return ATMO_Status_Success;
-    
-}
-
-
-ATMO_Status_t EmbeddedIconLinesDisplay_setLine4Text(ATMO_Value_t *in, ATMO_Value_t *out) {
-
-    char label[32];
-    if(ATMO_GetString(in, label, 32) == ATMO_Status_Success)
-    {
-        ATMO_UI_ICONLINES_SetMainText(ATMO_VARIABLE(EmbeddedIconLinesDisplay,pageHandle), 3, label);
-    }
-    else
-    {
-        return ATMO_Status_Fail;
-    }
-
-    return ATMO_Status_Success;
-    
-}
-
-
-ATMO_Status_t EmbeddedIconLinesDisplay_topRightButtonPressed(ATMO_Value_t *in, ATMO_Value_t *out) {
-
-	return ATMO_Status_Success;
-	
-}
-
-
-ATMO_Status_t EmbeddedIconLinesDisplay_bottomRightButtonPressed(ATMO_Value_t *in, ATMO_Value_t *out) {
-
-	return ATMO_Status_Success;
-	
-}
-
-
-ATMO_Status_t EmbeddedIconLinesDisplay_topLeftButtonPressed(ATMO_Value_t *in, ATMO_Value_t *out) {
-
-	return ATMO_Status_Success;
-	
-}
-
-
-ATMO_Status_t EmbeddedIconLinesDisplay_bottomLeftButtonPressed(ATMO_Value_t *in, ATMO_Value_t *out) {
-
-	return ATMO_Status_Success;
-	
 }
 
 
@@ -324,6 +144,102 @@ ATMO_Status_t GetDateTime_trigger(ATMO_Value_t *in, ATMO_Value_t *out) {
 	ATMO_CreateValueString(out, dateTimeStr);
 	
 	return ATMO_Status_Success;
+}
+
+
+ATMO_Status_t EmbeddedStaticTextDisplay_trigger(ATMO_Value_t *in, ATMO_Value_t *out) {
+	return ATMO_Status_Success;
+}
+
+
+ATMO_Status_t EmbeddedStaticTextDisplay_displayPage(ATMO_Value_t *in, ATMO_Value_t *out) {
+
+	ATMO_UI_Page_DisplayPageByCoord(ATMO_PROPERTY(EmbeddedStaticTextDisplay, x), ATMO_PROPERTY(EmbeddedStaticTextDisplay, y), false);
+	return ATMO_Status_Success;
+	
+}
+
+
+ATMO_Status_t EmbeddedStaticTextDisplay_topRightButtonPressed(ATMO_Value_t *in, ATMO_Value_t *out) {
+
+	return ATMO_Status_Success;
+	
+}
+
+
+ATMO_Status_t EmbeddedStaticTextDisplay_bottomRightButtonPressed(ATMO_Value_t *in, ATMO_Value_t *out) {
+
+	return ATMO_Status_Success;
+	
+}
+
+
+ATMO_Status_t EmbeddedStaticTextDisplay_topLeftButtonPressed(ATMO_Value_t *in, ATMO_Value_t *out) {
+
+	return ATMO_Status_Success;
+	
+}
+
+
+ATMO_Status_t EmbeddedStaticTextDisplay_bottomLeftButtonPressed(ATMO_Value_t *in, ATMO_Value_t *out) {
+
+	return ATMO_Status_Success;
+	
+}
+
+
+ATMO_Status_t EmbeddedStaticTextDisplay_onDisplayed(ATMO_Value_t *in, ATMO_Value_t *out) {
+
+	return ATMO_Status_Success;
+    
+}
+
+
+ATMO_Status_t EmbeddedStaticTextDisplay_setText(ATMO_Value_t *in, ATMO_Value_t *out) {
+
+    ATMO_Value_t strVal;
+    ATMO_InitValue(&strVal);
+    ATMO_CreateValueConverted(&strVal, ATMO_DATATYPE_STRING, in);
+    ATMO_UI_STATICTEXT_SetText(ATMO_VARIABLE(EmbeddedStaticTextDisplay,pageHandle), strVal.data);
+    ATMO_FreeValue(&strVal);
+	return ATMO_Status_Success;
+	
+}
+
+
+ATMO_Status_t EmbeddedStaticTextDisplay_setup(ATMO_Value_t *in, ATMO_Value_t *out) {
+
+    ATMO_UI_PAGE_Config_t config;
+	config.hidden = ATMO_PROPERTY(EmbeddedStaticTextDisplay, pageHidden);
+	config.textColor = ATMO_PROPERTY(EmbeddedStaticTextDisplay, textColor);
+	config.activeButtons = ATMO_UI_Page_GetButtonMask(ATMO_PROPERTY(EmbeddedStaticTextDisplay, topRightButtonEnabled),
+		ATMO_PROPERTY(EmbeddedStaticTextDisplay,bottomRightButtonEnabled), ATMO_PROPERTY(EmbeddedStaticTextDisplay, topLeftButtonEnabled), ATMO_PROPERTY(EmbeddedStaticTextDisplay, bottomLeftButtonEnabled));
+    config.x = ATMO_PROPERTY(EmbeddedStaticTextDisplay, x);
+	config.y = ATMO_PROPERTY(EmbeddedStaticTextDisplay, y);
+	strncpy(config.topLeftButtonLabel, ATMO_PROPERTY(EmbeddedStaticTextDisplay, topLeftButtonLabel), ATMO_BUTTON_LABEL_MAXLEN);
+	strncpy(config.topRightButtonLabel, ATMO_PROPERTY(EmbeddedStaticTextDisplay, topRightButtonLabel), ATMO_BUTTON_LABEL_MAXLEN);
+	strncpy(config.bottomLeftButtonLabel, ATMO_PROPERTY(EmbeddedStaticTextDisplay, bottomLeftButtonLabel), ATMO_BUTTON_LABEL_MAXLEN);
+	strncpy(config.bottomRightButtonLabel, ATMO_PROPERTY(EmbeddedStaticTextDisplay, bottomRightButtonLabel), ATMO_BUTTON_LABEL_MAXLEN);
+    config.spanX = ATMO_PROPERTY(EmbeddedStaticTextDisplay, spanX);
+	config.spanY = ATMO_PROPERTY(EmbeddedStaticTextDisplay, spanY);
+    config.title = ATMO_PROPERTY(EmbeddedStaticTextDisplay, pageTitle);
+    config.titleHidden = ATMO_PROPERTY(EmbeddedStaticTextDisplay, titleHidden);
+	ATMO_UI_STATICTEXT_Init(&config);
+	ATMO_VARIABLE(EmbeddedStaticTextDisplay, pageHandle) = config.templateInstance;
+    ATMO_UI_STATICTEXT_SetText(config.templateInstance, ATMO_PROPERTY(EmbeddedStaticTextDisplay, text));
+	ATMO_UI_STATICTEXT_SetTextSize(config.templateInstance, ATMO_PROPERTY(EmbeddedStaticTextDisplay, fontSize));
+	ATMO_UI_STATICTEXT_SetAlignment(config.templateInstance, ATMO_PROPERTY(EmbeddedStaticTextDisplay, horizontalAlignment));
+	ATMO_UI_STATICTEXT_RegisterButtonAbilityHandle(ATMO_VARIABLE(EmbeddedStaticTextDisplay,pageHandle), 1, ATMO_ABILITY(EmbeddedStaticTextDisplay, topRightButtonPressed));
+	ATMO_UI_STATICTEXT_RegisterButtonAbilityHandle(ATMO_VARIABLE(EmbeddedStaticTextDisplay,pageHandle), 2, ATMO_ABILITY(EmbeddedStaticTextDisplay, bottomRightButtonPressed));
+	ATMO_UI_STATICTEXT_RegisterButtonAbilityHandle(ATMO_VARIABLE(EmbeddedStaticTextDisplay,pageHandle), 3, ATMO_ABILITY(EmbeddedStaticTextDisplay, topLeftButtonPressed));
+    ATMO_UI_STATICTEXT_RegisterButtonAbilityHandle(ATMO_VARIABLE(EmbeddedStaticTextDisplay,pageHandle), 4, ATMO_ABILITY(EmbeddedStaticTextDisplay, bottomLeftButtonPressed));
+    
+	if(!config.hidden)
+	{
+		ATMO_UI_STATICTEXT_RegisterOnDisplayedAbilityHandle(ATMO_VARIABLE(EmbeddedStaticTextDisplay,pageHandle), ATMO_ABILITY(EmbeddedStaticTextDisplay, onDisplayed));
+	}
+    return ATMO_Status_Success;
+    
 }
 
 //FOOTER START

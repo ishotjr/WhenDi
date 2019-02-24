@@ -28,36 +28,6 @@ ATMO_Status_t EmbeddedNxpRpkUserButtons_topLeftPushed(ATMO_Value_t *in, ATMO_Val
 
 ATMO_Status_t EmbeddedNxpRpkUserButtons_bottomLeftPushed(ATMO_Value_t *in, ATMO_Value_t *out);
 
-ATMO_Status_t EmbeddedIconLinesDisplay_trigger(ATMO_Value_t *in, ATMO_Value_t *out);
-
-ATMO_Status_t EmbeddedIconLinesDisplay_displayPage(ATMO_Value_t *in, ATMO_Value_t *out);
-
-ATMO_Status_t EmbeddedIconLinesDisplay_onDisplayed(ATMO_Value_t *in, ATMO_Value_t *out);
-
-ATMO_Status_t EmbeddedIconLinesDisplay_onLeave(ATMO_Value_t *in, ATMO_Value_t *out);
-
-ATMO_Status_t EmbeddedIconLinesDisplay_setIconLabelAndColor(ATMO_Value_t *in, ATMO_Value_t *out);
-
-ATMO_Status_t EmbeddedIconLinesDisplay_setIconLabel(ATMO_Value_t *in, ATMO_Value_t *out);
-
-ATMO_Status_t EmbeddedIconLinesDisplay_setup(ATMO_Value_t *in, ATMO_Value_t *out);
-
-ATMO_Status_t EmbeddedIconLinesDisplay_setLine1Text(ATMO_Value_t *in, ATMO_Value_t *out);
-
-ATMO_Status_t EmbeddedIconLinesDisplay_setLine2Text(ATMO_Value_t *in, ATMO_Value_t *out);
-
-ATMO_Status_t EmbeddedIconLinesDisplay_setLine3Text(ATMO_Value_t *in, ATMO_Value_t *out);
-
-ATMO_Status_t EmbeddedIconLinesDisplay_setLine4Text(ATMO_Value_t *in, ATMO_Value_t *out);
-
-ATMO_Status_t EmbeddedIconLinesDisplay_topRightButtonPressed(ATMO_Value_t *in, ATMO_Value_t *out);
-
-ATMO_Status_t EmbeddedIconLinesDisplay_bottomRightButtonPressed(ATMO_Value_t *in, ATMO_Value_t *out);
-
-ATMO_Status_t EmbeddedIconLinesDisplay_topLeftButtonPressed(ATMO_Value_t *in, ATMO_Value_t *out);
-
-ATMO_Status_t EmbeddedIconLinesDisplay_bottomLeftButtonPressed(ATMO_Value_t *in, ATMO_Value_t *out);
-
 ATMO_Status_t Interval_trigger(ATMO_Value_t *in, ATMO_Value_t *out);
 
 ATMO_Status_t Interval_setup(ATMO_Value_t *in, ATMO_Value_t *out);
@@ -65,4 +35,22 @@ ATMO_Status_t Interval_setup(ATMO_Value_t *in, ATMO_Value_t *out);
 ATMO_Status_t Interval_interval(ATMO_Value_t *in, ATMO_Value_t *out);
 
 ATMO_Status_t GetDateTime_trigger(ATMO_Value_t *in, ATMO_Value_t *out);
+
+ATMO_Status_t EmbeddedStaticTextDisplay_trigger(ATMO_Value_t *in, ATMO_Value_t *out);
+
+ATMO_Status_t EmbeddedStaticTextDisplay_displayPage(ATMO_Value_t *in, ATMO_Value_t *out);
+
+ATMO_Status_t EmbeddedStaticTextDisplay_topRightButtonPressed(ATMO_Value_t *in, ATMO_Value_t *out);
+
+ATMO_Status_t EmbeddedStaticTextDisplay_bottomRightButtonPressed(ATMO_Value_t *in, ATMO_Value_t *out);
+
+ATMO_Status_t EmbeddedStaticTextDisplay_topLeftButtonPressed(ATMO_Value_t *in, ATMO_Value_t *out);
+
+ATMO_Status_t EmbeddedStaticTextDisplay_bottomLeftButtonPressed(ATMO_Value_t *in, ATMO_Value_t *out);
+
+ATMO_Status_t EmbeddedStaticTextDisplay_onDisplayed(ATMO_Value_t *in, ATMO_Value_t *out);
+
+ATMO_Status_t EmbeddedStaticTextDisplay_setText(ATMO_Value_t *in, ATMO_Value_t *out);
+
+ATMO_Status_t EmbeddedStaticTextDisplay_setup(ATMO_Value_t *in, ATMO_Value_t *out);
 #endif

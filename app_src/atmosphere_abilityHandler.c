@@ -60,133 +60,6 @@ void ATMO_AbilityHandler(unsigned int abilityHandleId, ATMO_Value_t *value) {
 			ATMO_FreeValue(&EmbeddedNxpRpkUserButtons_Value);
 			break;
 		}
-		case ATMO_ABILITY(EmbeddedIconLinesDisplay, trigger):
-		{
-			ATMO_Value_t EmbeddedIconLinesDisplay_Value;
-			ATMO_InitValue(&EmbeddedIconLinesDisplay_Value);
-			EmbeddedIconLinesDisplay_trigger(value, &EmbeddedIconLinesDisplay_Value);
-			ATMO_TriggerHandler(ATMO_TRIGGER(EmbeddedIconLinesDisplay, triggered), &EmbeddedIconLinesDisplay_Value);
-			ATMO_FreeValue(&EmbeddedIconLinesDisplay_Value);
-			break;
-		}
-		case ATMO_ABILITY(EmbeddedIconLinesDisplay, displayPage):
-		{
-			ATMO_Value_t EmbeddedIconLinesDisplay_Value;
-			ATMO_InitValue(&EmbeddedIconLinesDisplay_Value);
-			EmbeddedIconLinesDisplay_displayPage(value, &EmbeddedIconLinesDisplay_Value);
-			ATMO_FreeValue(&EmbeddedIconLinesDisplay_Value);
-			break;
-		}
-		case ATMO_ABILITY(EmbeddedIconLinesDisplay, onDisplayed):
-		{
-			ATMO_Value_t EmbeddedIconLinesDisplay_Value;
-			ATMO_InitValue(&EmbeddedIconLinesDisplay_Value);
-			EmbeddedIconLinesDisplay_onDisplayed(value, &EmbeddedIconLinesDisplay_Value);
-			ATMO_TriggerHandler(ATMO_TRIGGER(EmbeddedIconLinesDisplay, onDisplayed), &EmbeddedIconLinesDisplay_Value);
-			ATMO_FreeValue(&EmbeddedIconLinesDisplay_Value);
-			break;
-		}
-		case ATMO_ABILITY(EmbeddedIconLinesDisplay, onLeave):
-		{
-			ATMO_Value_t EmbeddedIconLinesDisplay_Value;
-			ATMO_InitValue(&EmbeddedIconLinesDisplay_Value);
-			EmbeddedIconLinesDisplay_onLeave(value, &EmbeddedIconLinesDisplay_Value);
-			ATMO_TriggerHandler(ATMO_TRIGGER(EmbeddedIconLinesDisplay, onLeave), &EmbeddedIconLinesDisplay_Value);
-			ATMO_FreeValue(&EmbeddedIconLinesDisplay_Value);
-			break;
-		}
-		case ATMO_ABILITY(EmbeddedIconLinesDisplay, setIconLabelAndColor):
-		{
-			ATMO_Value_t EmbeddedIconLinesDisplay_Value;
-			ATMO_InitValue(&EmbeddedIconLinesDisplay_Value);
-			EmbeddedIconLinesDisplay_setIconLabelAndColor(value, &EmbeddedIconLinesDisplay_Value);
-			ATMO_FreeValue(&EmbeddedIconLinesDisplay_Value);
-			break;
-		}
-		case ATMO_ABILITY(EmbeddedIconLinesDisplay, setIconLabel):
-		{
-			ATMO_Value_t EmbeddedIconLinesDisplay_Value;
-			ATMO_InitValue(&EmbeddedIconLinesDisplay_Value);
-			EmbeddedIconLinesDisplay_setIconLabel(value, &EmbeddedIconLinesDisplay_Value);
-			ATMO_FreeValue(&EmbeddedIconLinesDisplay_Value);
-			break;
-		}
-		case ATMO_ABILITY(EmbeddedIconLinesDisplay, setup):
-		{
-			ATMO_Value_t EmbeddedIconLinesDisplay_Value;
-			ATMO_InitValue(&EmbeddedIconLinesDisplay_Value);
-			EmbeddedIconLinesDisplay_setup(value, &EmbeddedIconLinesDisplay_Value);
-			ATMO_FreeValue(&EmbeddedIconLinesDisplay_Value);
-			break;
-		}
-		case ATMO_ABILITY(EmbeddedIconLinesDisplay, setLine1Text):
-		{
-			ATMO_Value_t EmbeddedIconLinesDisplay_Value;
-			ATMO_InitValue(&EmbeddedIconLinesDisplay_Value);
-			EmbeddedIconLinesDisplay_setLine1Text(value, &EmbeddedIconLinesDisplay_Value);
-			ATMO_FreeValue(&EmbeddedIconLinesDisplay_Value);
-			break;
-		}
-		case ATMO_ABILITY(EmbeddedIconLinesDisplay, setLine2Text):
-		{
-			ATMO_Value_t EmbeddedIconLinesDisplay_Value;
-			ATMO_InitValue(&EmbeddedIconLinesDisplay_Value);
-			EmbeddedIconLinesDisplay_setLine2Text(value, &EmbeddedIconLinesDisplay_Value);
-			ATMO_FreeValue(&EmbeddedIconLinesDisplay_Value);
-			break;
-		}
-		case ATMO_ABILITY(EmbeddedIconLinesDisplay, setLine3Text):
-		{
-			ATMO_Value_t EmbeddedIconLinesDisplay_Value;
-			ATMO_InitValue(&EmbeddedIconLinesDisplay_Value);
-			EmbeddedIconLinesDisplay_setLine3Text(value, &EmbeddedIconLinesDisplay_Value);
-			ATMO_FreeValue(&EmbeddedIconLinesDisplay_Value);
-			break;
-		}
-		case ATMO_ABILITY(EmbeddedIconLinesDisplay, setLine4Text):
-		{
-			ATMO_Value_t EmbeddedIconLinesDisplay_Value;
-			ATMO_InitValue(&EmbeddedIconLinesDisplay_Value);
-			EmbeddedIconLinesDisplay_setLine4Text(value, &EmbeddedIconLinesDisplay_Value);
-			ATMO_FreeValue(&EmbeddedIconLinesDisplay_Value);
-			break;
-		}
-		case ATMO_ABILITY(EmbeddedIconLinesDisplay, topRightButtonPressed):
-		{
-			ATMO_Value_t EmbeddedIconLinesDisplay_Value;
-			ATMO_InitValue(&EmbeddedIconLinesDisplay_Value);
-			EmbeddedIconLinesDisplay_topRightButtonPressed(value, &EmbeddedIconLinesDisplay_Value);
-			ATMO_TriggerHandler(ATMO_TRIGGER(EmbeddedIconLinesDisplay, topRightButtonPressed), &EmbeddedIconLinesDisplay_Value);
-			ATMO_FreeValue(&EmbeddedIconLinesDisplay_Value);
-			break;
-		}
-		case ATMO_ABILITY(EmbeddedIconLinesDisplay, bottomRightButtonPressed):
-		{
-			ATMO_Value_t EmbeddedIconLinesDisplay_Value;
-			ATMO_InitValue(&EmbeddedIconLinesDisplay_Value);
-			EmbeddedIconLinesDisplay_bottomRightButtonPressed(value, &EmbeddedIconLinesDisplay_Value);
-			ATMO_TriggerHandler(ATMO_TRIGGER(EmbeddedIconLinesDisplay, bottomRightButtonPressed), &EmbeddedIconLinesDisplay_Value);
-			ATMO_FreeValue(&EmbeddedIconLinesDisplay_Value);
-			break;
-		}
-		case ATMO_ABILITY(EmbeddedIconLinesDisplay, topLeftButtonPressed):
-		{
-			ATMO_Value_t EmbeddedIconLinesDisplay_Value;
-			ATMO_InitValue(&EmbeddedIconLinesDisplay_Value);
-			EmbeddedIconLinesDisplay_topLeftButtonPressed(value, &EmbeddedIconLinesDisplay_Value);
-			ATMO_TriggerHandler(ATMO_TRIGGER(EmbeddedIconLinesDisplay, topLeftButtonPressed), &EmbeddedIconLinesDisplay_Value);
-			ATMO_FreeValue(&EmbeddedIconLinesDisplay_Value);
-			break;
-		}
-		case ATMO_ABILITY(EmbeddedIconLinesDisplay, bottomLeftButtonPressed):
-		{
-			ATMO_Value_t EmbeddedIconLinesDisplay_Value;
-			ATMO_InitValue(&EmbeddedIconLinesDisplay_Value);
-			EmbeddedIconLinesDisplay_bottomLeftButtonPressed(value, &EmbeddedIconLinesDisplay_Value);
-			ATMO_TriggerHandler(ATMO_TRIGGER(EmbeddedIconLinesDisplay, bottomLeftButtonPressed), &EmbeddedIconLinesDisplay_Value);
-			ATMO_FreeValue(&EmbeddedIconLinesDisplay_Value);
-			break;
-		}
 		case ATMO_ABILITY(Interval, trigger):
 		{
 			ATMO_Value_t Interval_Value;
@@ -220,6 +93,84 @@ void ATMO_AbilityHandler(unsigned int abilityHandleId, ATMO_Value_t *value) {
 			GetDateTime_trigger(value, &GetDateTime_Value);
 			ATMO_TriggerHandler(ATMO_TRIGGER(GetDateTime, triggered), &GetDateTime_Value);
 			ATMO_FreeValue(&GetDateTime_Value);
+			break;
+		}
+		case ATMO_ABILITY(EmbeddedStaticTextDisplay, trigger):
+		{
+			ATMO_Value_t EmbeddedStaticTextDisplay_Value;
+			ATMO_InitValue(&EmbeddedStaticTextDisplay_Value);
+			EmbeddedStaticTextDisplay_trigger(value, &EmbeddedStaticTextDisplay_Value);
+			ATMO_TriggerHandler(ATMO_TRIGGER(EmbeddedStaticTextDisplay, triggered), &EmbeddedStaticTextDisplay_Value);
+			ATMO_FreeValue(&EmbeddedStaticTextDisplay_Value);
+			break;
+		}
+		case ATMO_ABILITY(EmbeddedStaticTextDisplay, displayPage):
+		{
+			ATMO_Value_t EmbeddedStaticTextDisplay_Value;
+			ATMO_InitValue(&EmbeddedStaticTextDisplay_Value);
+			EmbeddedStaticTextDisplay_displayPage(value, &EmbeddedStaticTextDisplay_Value);
+			ATMO_FreeValue(&EmbeddedStaticTextDisplay_Value);
+			break;
+		}
+		case ATMO_ABILITY(EmbeddedStaticTextDisplay, topRightButtonPressed):
+		{
+			ATMO_Value_t EmbeddedStaticTextDisplay_Value;
+			ATMO_InitValue(&EmbeddedStaticTextDisplay_Value);
+			EmbeddedStaticTextDisplay_topRightButtonPressed(value, &EmbeddedStaticTextDisplay_Value);
+			ATMO_TriggerHandler(ATMO_TRIGGER(EmbeddedStaticTextDisplay, topRightButtonPressed), &EmbeddedStaticTextDisplay_Value);
+			ATMO_FreeValue(&EmbeddedStaticTextDisplay_Value);
+			break;
+		}
+		case ATMO_ABILITY(EmbeddedStaticTextDisplay, bottomRightButtonPressed):
+		{
+			ATMO_Value_t EmbeddedStaticTextDisplay_Value;
+			ATMO_InitValue(&EmbeddedStaticTextDisplay_Value);
+			EmbeddedStaticTextDisplay_bottomRightButtonPressed(value, &EmbeddedStaticTextDisplay_Value);
+			ATMO_TriggerHandler(ATMO_TRIGGER(EmbeddedStaticTextDisplay, bottomRightButtonPressed), &EmbeddedStaticTextDisplay_Value);
+			ATMO_FreeValue(&EmbeddedStaticTextDisplay_Value);
+			break;
+		}
+		case ATMO_ABILITY(EmbeddedStaticTextDisplay, topLeftButtonPressed):
+		{
+			ATMO_Value_t EmbeddedStaticTextDisplay_Value;
+			ATMO_InitValue(&EmbeddedStaticTextDisplay_Value);
+			EmbeddedStaticTextDisplay_topLeftButtonPressed(value, &EmbeddedStaticTextDisplay_Value);
+			ATMO_TriggerHandler(ATMO_TRIGGER(EmbeddedStaticTextDisplay, topLeftButtonPressed), &EmbeddedStaticTextDisplay_Value);
+			ATMO_FreeValue(&EmbeddedStaticTextDisplay_Value);
+			break;
+		}
+		case ATMO_ABILITY(EmbeddedStaticTextDisplay, bottomLeftButtonPressed):
+		{
+			ATMO_Value_t EmbeddedStaticTextDisplay_Value;
+			ATMO_InitValue(&EmbeddedStaticTextDisplay_Value);
+			EmbeddedStaticTextDisplay_bottomLeftButtonPressed(value, &EmbeddedStaticTextDisplay_Value);
+			ATMO_TriggerHandler(ATMO_TRIGGER(EmbeddedStaticTextDisplay, bottomLeftButtonPressed), &EmbeddedStaticTextDisplay_Value);
+			ATMO_FreeValue(&EmbeddedStaticTextDisplay_Value);
+			break;
+		}
+		case ATMO_ABILITY(EmbeddedStaticTextDisplay, onDisplayed):
+		{
+			ATMO_Value_t EmbeddedStaticTextDisplay_Value;
+			ATMO_InitValue(&EmbeddedStaticTextDisplay_Value);
+			EmbeddedStaticTextDisplay_onDisplayed(value, &EmbeddedStaticTextDisplay_Value);
+			ATMO_TriggerHandler(ATMO_TRIGGER(EmbeddedStaticTextDisplay, onDisplayed), &EmbeddedStaticTextDisplay_Value);
+			ATMO_FreeValue(&EmbeddedStaticTextDisplay_Value);
+			break;
+		}
+		case ATMO_ABILITY(EmbeddedStaticTextDisplay, setText):
+		{
+			ATMO_Value_t EmbeddedStaticTextDisplay_Value;
+			ATMO_InitValue(&EmbeddedStaticTextDisplay_Value);
+			EmbeddedStaticTextDisplay_setText(value, &EmbeddedStaticTextDisplay_Value);
+			ATMO_FreeValue(&EmbeddedStaticTextDisplay_Value);
+			break;
+		}
+		case ATMO_ABILITY(EmbeddedStaticTextDisplay, setup):
+		{
+			ATMO_Value_t EmbeddedStaticTextDisplay_Value;
+			ATMO_InitValue(&EmbeddedStaticTextDisplay_Value);
+			EmbeddedStaticTextDisplay_setup(value, &EmbeddedStaticTextDisplay_Value);
+			ATMO_FreeValue(&EmbeddedStaticTextDisplay_Value);
 			break;
 		}
 	}

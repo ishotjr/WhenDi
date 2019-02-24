@@ -428,6 +428,11 @@ ATMO_Status_t ATMO_CreateValueDouble(ATMO_Value_t *value, double data) {
 ATMO_Status_t ATMO_CreateValueString(ATMO_Value_t *value, const char *str) {
 	
 	ATMO_FreeValue(value);
+
+	if(str == NULL)
+	{
+		return ATMO_Status_Fail;
+	}
 	
 	size_t length = strlen(str) + sizeof(char);
 
@@ -459,6 +464,11 @@ ATMO_Status_t ATMO_CreateValueString(ATMO_Value_t *value, const char *str) {
 ATMO_Status_t ATMO_CreateValueBinary(ATMO_Value_t *value, const void *data, unsigned int size) {
 	
 	ATMO_FreeValue(value);
+
+	if(data == NULL)
+	{
+		return ATMO_Status_Fail;
+	}
 	
 #ifndef ATMO_STATIC_CORE
 	value->data = ATMO_Malloc(size);

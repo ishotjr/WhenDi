@@ -14,60 +14,25 @@ void ATMO_TriggerHandler(unsigned int triggerHandleId, ATMO_Value_t *value) {
 
 		case ATMO_TRIGGER(EmbeddedNxpRpkUserButtons, topRightPushed):
 		{
-			ATMO_AbilityHandler(ATMO_ABILITY(EmbeddedIconLinesDisplay, setLine1Text), value);
+			ATMO_AbilityHandler(ATMO_ABILITY(EmbeddedStaticTextDisplay, setText), value);
 			break;
 		}
 
 		case ATMO_TRIGGER(EmbeddedNxpRpkUserButtons, bottomRightPushed):
 		{
-			ATMO_AbilityHandler(ATMO_ABILITY(EmbeddedIconLinesDisplay, setLine2Text), value);
+			ATMO_AbilityHandler(ATMO_ABILITY(EmbeddedStaticTextDisplay, setText), value);
 			break;
 		}
 
 		case ATMO_TRIGGER(EmbeddedNxpRpkUserButtons, topLeftPushed):
 		{
-			ATMO_AbilityHandler(ATMO_ABILITY(EmbeddedIconLinesDisplay, setLine3Text), value);
+			ATMO_AbilityHandler(ATMO_ABILITY(EmbeddedStaticTextDisplay, setText), value);
 			break;
 		}
 
 		case ATMO_TRIGGER(EmbeddedNxpRpkUserButtons, bottomLeftPushed):
 		{
-			ATMO_AbilityHandler(ATMO_ABILITY(EmbeddedIconLinesDisplay, setLine4Text), value);
-			break;
-		}
-
-		case ATMO_TRIGGER(EmbeddedIconLinesDisplay, triggered):
-		{
-			break;
-		}
-
-		case ATMO_TRIGGER(EmbeddedIconLinesDisplay, onDisplayed):
-		{
-			break;
-		}
-
-		case ATMO_TRIGGER(EmbeddedIconLinesDisplay, onLeave):
-		{
-			break;
-		}
-
-		case ATMO_TRIGGER(EmbeddedIconLinesDisplay, topRightButtonPressed):
-		{
-			break;
-		}
-
-		case ATMO_TRIGGER(EmbeddedIconLinesDisplay, bottomRightButtonPressed):
-		{
-			break;
-		}
-
-		case ATMO_TRIGGER(EmbeddedIconLinesDisplay, topLeftButtonPressed):
-		{
-			break;
-		}
-
-		case ATMO_TRIGGER(EmbeddedIconLinesDisplay, bottomLeftButtonPressed):
-		{
+			ATMO_AbilityHandler(ATMO_ABILITY(EmbeddedStaticTextDisplay, setText), value);
 			break;
 		}
 
@@ -84,7 +49,37 @@ void ATMO_TriggerHandler(unsigned int triggerHandleId, ATMO_Value_t *value) {
 
 		case ATMO_TRIGGER(GetDateTime, triggered):
 		{
-			ATMO_AbilityHandler(ATMO_ABILITY(EmbeddedIconLinesDisplay, setIconLabel), value);
+			ATMO_AbilityHandler(ATMO_ABILITY(EmbeddedStaticTextDisplay, setText), value);
+			break;
+		}
+
+		case ATMO_TRIGGER(EmbeddedStaticTextDisplay, triggered):
+		{
+			break;
+		}
+
+		case ATMO_TRIGGER(EmbeddedStaticTextDisplay, topRightButtonPressed):
+		{
+			break;
+		}
+
+		case ATMO_TRIGGER(EmbeddedStaticTextDisplay, bottomRightButtonPressed):
+		{
+			break;
+		}
+
+		case ATMO_TRIGGER(EmbeddedStaticTextDisplay, topLeftButtonPressed):
+		{
+			break;
+		}
+
+		case ATMO_TRIGGER(EmbeddedStaticTextDisplay, bottomLeftButtonPressed):
+		{
+			break;
+		}
+
+		case ATMO_TRIGGER(EmbeddedStaticTextDisplay, onDisplayed):
+		{
 			break;
 		}
 
