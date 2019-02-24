@@ -1,12 +1,16 @@
 #include "atmosphere_callbacks.h"
 
 //HEADER START
-#define BUFFER_SIZE 50
+#define BUFFER_SIZE 60
 
 static int s_feeds = 0;
 static int s_changes = 0;
 static int s_sleeps = 0;
 static int s_wakes = 0;
+static ATMO_DateTime_Time_t s_feed_time;
+static ATMO_DateTime_Time_t s_change_time;
+static ATMO_DateTime_Time_t s_sleep_time;
+static ATMO_DateTime_Time_t s_wake_time;
 static char s_display[BUFFER_SIZE];
 
 static void refresh_display() {
@@ -30,10 +34,45 @@ static void refresh_display() {
     strftime(dateTimeStr, bufferSize, "   %H:%M", now);    
     */
     
+    int formatted_size = 6;
+    char sleep_time_formatted[formatted_size];
+    char feed_time_formatted[formatted_size];
+    char wake_time_formatted[formatted_size];
+    char changes_formatted[formatted_size];
+    char colon[2] = ":";
+    
+    // only display if set (not sure how safe not initializing is, but ...)
+    if (s_sleep_time.years != 0) {
+        snprintf(sleep_time_formatted, formatted_size, "%02d:%02d", s_sleep_time.hours, s_sleep_time.minutes);
+    }
+    if (s_feed_time.years != 0) {
+        snprintf(feed_time_formatted, formatted_size, "%02d:%02d", s_feed_time.hours, s_feed_time.minutes);
+    }
+    if (s_wake_time.years != 0) {
+        snprintf(wake_time_formatted, formatted_size, "%02d:%02d", s_wake_time.hours, s_wake_time.minutes);
+    }
+    if (s_change_time.years != 0) {
+        snprintf(changes_formatted, formatted_size, "%02d:%02d", s_change_time.hours, s_change_time.minutes);
+    }
+    
+    
 	ATMO_DateTime_Time_t now;
     ATMO_DateTime_GetDateTime(0, &now);
-	snprintf(s_display, BUFFER_SIZE, "%02d:%02d\n%d sleeps\n%d feeds\n%d wakes\n%d changes", 
-	    now.hours, now.minutes, s_sleeps, s_feeds, s_wakes, s_changes);
+    
+    // blinking seconds like a digital watch
+    if (now.seconds % 2) {
+        colon[0] = ':';
+    } else {
+        colon[0] = ' ';
+    }
+    
+    // TODO: handle > 9 woke / chg'd without wrap
+	snprintf(s_display, BUFFER_SIZE, "%02d%s%02d\n%d slept %s\n%d ate %s\n%d woke %s\n%d chg'd %s", 
+	    now.hours, colon, now.minutes, 
+	    s_sleeps, sleep_time_formatted,
+	    s_feeds, feed_time_formatted,
+	    s_wakes, wake_time_formatted,
+	    s_changes, changes_formatted);
 	
     ATMO_PLATFORM_DebugPrint("s_display:\r\n%s\r\n", s_display);
     
@@ -48,6 +87,7 @@ void ATMO_Setup() {
 	unsigned int syncTime = 1555344000;
 	ATMO_PLATFORM_DebugPrint("RX Time: %d\r\n", syncTime);
 	ATMO_DateTime_SetDateTimeEpoch(0, syncTime);
+	
 	return ATMO_Status_Success;
 }
 
@@ -73,6 +113,7 @@ ATMO_Status_t EmbeddedNxpRpkUserButtons_setup(ATMO_Value_t *in, ATMO_Value_t *ou
 ATMO_Status_t EmbeddedNxpRpkUserButtons_topRightPushed(ATMO_Value_t *in, ATMO_Value_t *out) {
 
     s_feeds++;
+	ATMO_DateTime_GetDateTime(0, &s_feed_time);
     
     refresh_display();
 
@@ -85,7 +126,8 @@ ATMO_Status_t EmbeddedNxpRpkUserButtons_topRightPushed(ATMO_Value_t *in, ATMO_Va
 ATMO_Status_t EmbeddedNxpRpkUserButtons_bottomRightPushed(ATMO_Value_t *in, ATMO_Value_t *out) {
 
     s_changes++;
-    
+	ATMO_DateTime_GetDateTime(0, &s_change_time);
+	
     refresh_display();
 
 	ATMO_CreateValueString(out, s_display);
@@ -97,7 +139,8 @@ ATMO_Status_t EmbeddedNxpRpkUserButtons_bottomRightPushed(ATMO_Value_t *in, ATMO
 ATMO_Status_t EmbeddedNxpRpkUserButtons_topLeftPushed(ATMO_Value_t *in, ATMO_Value_t *out) {
 
     s_sleeps++;
-    
+	ATMO_DateTime_GetDateTime(0, &s_sleep_time);
+	
     refresh_display();
 
 	ATMO_CreateValueString(out, s_display);
@@ -109,7 +152,8 @@ ATMO_Status_t EmbeddedNxpRpkUserButtons_topLeftPushed(ATMO_Value_t *in, ATMO_Val
 ATMO_Status_t EmbeddedNxpRpkUserButtons_bottomLeftPushed(ATMO_Value_t *in, ATMO_Value_t *out) {
 
     s_wakes++;
-    
+	ATMO_DateTime_GetDateTime(0, &s_wake_time);
+	
     refresh_display();
 
 	ATMO_CreateValueString(out, s_display);
