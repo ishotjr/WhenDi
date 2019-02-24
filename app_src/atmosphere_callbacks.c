@@ -1,10 +1,43 @@
 #include "atmosphere_callbacks.h"
 
 //HEADER START
+#define BUFFER_SIZE 50
+
 static int s_feeds = 0;
 static int s_changes = 0;
 static int s_sleeps = 0;
 static int s_wakes = 0;
+static char s_display[BUFFER_SIZE];
+
+static void refresh_display() {
+    
+    // EmbeddedStaticTextDisplay behaves as a single line of text -
+    // unless we hack some newlines in like this! :D
+    
+    /*
+    // huh: turns out strftime() works too!?
+    time_t temp = time(NULL);
+    struct tm *now = localtime(&temp);
+    strftime(dateTimeStr, bufferSize, "   %H:%M", now);
+    */
+    /*
+    time_t temp;
+    struct tm *now;
+    
+    time(&temp);
+    now = localtime(&temp);
+    
+    strftime(dateTimeStr, bufferSize, "   %H:%M", now);    
+    */
+    
+	ATMO_DateTime_Time_t now;
+    ATMO_DateTime_GetDateTime(0, &now);
+	snprintf(s_display, BUFFER_SIZE, "%02d:%02d\n%d sleeps\n%d feeds\n%d wakes\n%d changes", 
+	    now.hours, now.minutes, s_sleeps, s_feeds, s_wakes, s_changes);
+	
+    ATMO_PLATFORM_DebugPrint("s_display:\r\n%s\r\n", s_display);
+    
+}
 //HEADER END
 
 void ATMO_Setup() {
@@ -41,9 +74,9 @@ ATMO_Status_t EmbeddedNxpRpkUserButtons_topRightPushed(ATMO_Value_t *in, ATMO_Va
 
     s_feeds++;
     
-	char str[32];
-	sprintf(str, "%d feeds", s_feeds);
-	ATMO_CreateValueString(out, str);
+    refresh_display();
+
+	ATMO_CreateValueString(out, s_display);
 	return ATMO_Status_Success;
     
 }
@@ -53,12 +86,9 @@ ATMO_Status_t EmbeddedNxpRpkUserButtons_bottomRightPushed(ATMO_Value_t *in, ATMO
 
     s_changes++;
     
-	char str[32];
-	sprintf(str, "%d changes", s_changes);
-	
-    ATMO_PLATFORM_DebugPrint("%s\r\n", str);
+    refresh_display();
 
-	ATMO_CreateValueString(out, str);
+	ATMO_CreateValueString(out, s_display);
 	return ATMO_Status_Success;
     
 }
@@ -68,9 +98,9 @@ ATMO_Status_t EmbeddedNxpRpkUserButtons_topLeftPushed(ATMO_Value_t *in, ATMO_Val
 
     s_sleeps++;
     
-	char str[32];
-	sprintf(str, "%d sleeps", s_sleeps);
-	ATMO_CreateValueString(out, str);
+    refresh_display();
+
+	ATMO_CreateValueString(out, s_display);
 	return ATMO_Status_Success;
     
 }
@@ -80,9 +110,9 @@ ATMO_Status_t EmbeddedNxpRpkUserButtons_bottomLeftPushed(ATMO_Value_t *in, ATMO_
 
     s_wakes++;
     
-	char str[32];
-	sprintf(str, "%d wakes", s_wakes);
-	ATMO_CreateValueString(out, str);
+    refresh_display();
+
+	ATMO_CreateValueString(out, s_display);
 	return ATMO_Status_Success;
     
 }
@@ -114,36 +144,12 @@ ATMO_Status_t Interval_interval(ATMO_Value_t *in, ATMO_Value_t *out) {
 
 
 ATMO_Status_t GetDateTime_trigger(ATMO_Value_t *in, ATMO_Value_t *out) {
-	
-	// output DateTime based on RTC
-	unsigned int bufferSize = 10;
-	char dateTimeStr[bufferSize];
-	// ATMO_DateTime_GetDateTimeIsoStr(0, dateTimeStr, sizeof(dateTimeStr));
+    
+    refresh_display();
 
-	ATMO_DateTime_Time_t now;
-    ATMO_DateTime_GetDateTime(0, &now);
-	snprintf(dateTimeStr, bufferSize, "   %02d:%02d", now.hours, now.minutes);
-	                                // ^^^ extra padding as workaround for icon drawing bug
-    
-    /*
-    // huh: turns out strftime() works too!?
-    time_t temp = time(NULL);
-    struct tm *now = localtime(&temp);
-    strftime(dateTimeStr, bufferSize, "   %H:%M", now);
-    */
-    /*
-    time_t temp;
-    struct tm *now;
-    
-    time(&temp);
-    now = localtime(&temp);
-    
-    strftime(dateTimeStr, bufferSize, "   %H:%M", now);    
-    */
-    
-	ATMO_CreateValueString(out, dateTimeStr);
-	
+	ATMO_CreateValueString(out, s_display);
 	return ATMO_Status_Success;
+	
 }
 
 
