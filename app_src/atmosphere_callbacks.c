@@ -13,6 +13,18 @@ static ATMO_DateTime_Time_t s_sleep_time;
 static ATMO_DateTime_Time_t s_wake_time;
 static char s_display[BUFFER_SIZE];
 
+
+// my own very stupid difftime since I can't get tm or time_t to work here
+static double bad_difftime(ATMO_DateTime_Time_t *time1, ATMO_DateTime_Time_t *time2) {
+    
+    // this is really bad but good enough for most of our comparisons
+    // which will be only a few hours and likely not span midnight
+    
+    return ((((time1->hours * 60) + time1->minutes) * 60 + time1->seconds) - 
+        (((time2->hours * 60) + time2->minutes) * 60 + time2->seconds));
+    
+}
+
 static void refresh_display() {
     
     // EmbeddedStaticTextDisplay behaves as a single line of text -
@@ -41,23 +53,51 @@ static void refresh_display() {
     char changes_formatted[formatted_size];
     char colon[2] = ":";
     
-    // only display if set (not sure how safe not initializing is, but ...)
-    if (s_sleep_time.years != 0) {
-        snprintf(sleep_time_formatted, formatted_size, "%02d:%02d", s_sleep_time.hours, s_sleep_time.minutes);
-    }
-    if (s_feed_time.years != 0) {
-        snprintf(feed_time_formatted, formatted_size, "%02d:%02d", s_feed_time.hours, s_feed_time.minutes);
-    }
-    if (s_wake_time.years != 0) {
-        snprintf(wake_time_formatted, formatted_size, "%02d:%02d", s_wake_time.hours, s_wake_time.minutes);
-    }
-    if (s_change_time.years != 0) {
-        snprintf(changes_formatted, formatted_size, "%02d:%02d", s_change_time.hours, s_change_time.minutes);
-    }
-    
     
 	ATMO_DateTime_Time_t now;
     ATMO_DateTime_GetDateTime(0, &now);
+    
+    /*
+    // TODO: move this to own function
+    struct tm sleep_tm;
+    sleep_tm.tm_mday = s_sleep_time->days;
+    sleep_tm.tm_isdst = 0;
+    sleep_tm.tm_hour = s_sleep_time->hours;
+    sleep_tm.tm_min = s_sleep_time->minutes;
+    sleep_tm.tm_mon = s_sleep_time->month - 1;
+    sleep_tm.tm_sec = s_sleep_time->seconds;
+    sleep_tm.tm_wday = s_sleep_time->weekday;
+    sleep_tm.tm_yday = 0;
+    sleep_tm.tm_year = s_sleep_time->years + 100;
+    */
+    
+
+    /*
+    time_t temp;
+    struct tm *now_tm;
+    
+    time(&temp);
+    now_tm = localtime(&temp);
+
+    double diff_t;
+    //diff_t = difftime(now_tm, timeinfo);
+    */
+
+    
+    // only display if set (not sure how safe not initializing is, but ...)
+    if (s_sleep_time.years != 0) {
+        snprintf(sleep_time_formatted, formatted_size, "(%.0fm)", bad_difftime(&now, &s_sleep_time) / 60);
+    }
+    if (s_feed_time.years != 0) {
+        snprintf(feed_time_formatted, formatted_size, "(%.0fm)", bad_difftime(&now, &s_feed_time) / 60);
+    }
+    if (s_wake_time.years != 0) {
+        snprintf(wake_time_formatted, formatted_size, "(%.0fm)", bad_difftime(&now, &s_wake_time) / 60);
+    }
+    if (s_change_time.years != 0) {
+        snprintf(changes_formatted, formatted_size, "(%.0fm)", bad_difftime(&now, &s_change_time) / 60);
+    }
+    
     
     // blinking seconds like a digital watch
     if (now.seconds % 2) {
@@ -67,7 +107,7 @@ static void refresh_display() {
     }
     
     // TODO: handle > 9 woke / chg'd without wrap
-	snprintf(s_display, BUFFER_SIZE, "%02d%s%02d\n%d slept %s\n%d ate %s\n%d woke %s\n%d chg'd %s", 
+	snprintf(s_display, BUFFER_SIZE, "%02d%s%02d\n%d sleep %s\n%d eat %s\n%d wake %s\n%d chng %s", 
 	    now.hours, colon, now.minutes, 
 	    s_sleeps, sleep_time_formatted,
 	    s_feeds, feed_time_formatted,
